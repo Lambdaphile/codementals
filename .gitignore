@@ -1,11 +1,8 @@
 # Ignore vscode setting directory
 .vscode
 
-# Ignore notes
-notes.txt
-
-# I'will finish these later since, because
-# I want to move onto more interesting chapters :D
+# I'will finish these later, because
+# I want to move into more interesting chapters :D
 chapter-09-methods/exercise-0908.cs
 chapter-09-methods/exercise-0912.cs
 
