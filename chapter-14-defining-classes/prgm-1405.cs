@@ -35,14 +35,14 @@ namespace Program
         private Subjects subject;
         public enum Universities { Standford, IBM, Harvard }
         private Universities university;
-        public static int instanceCounter = 0;
+        public static int instances = 0;
 
         public string FullName { get => fullName; set => fullName = value; }
         public string Email { get => email; set => email = value; }
         public int PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public int Course { get => course; set => course = value; }
-        internal Subjects Subject { get => subject; set => subject = value; }
-        internal Universities University { get => university; set => university = value; }
+        public Subjects Subject { get => subject; set => subject = value; }
+        public Universities University { get => university; set => university = value; }
 
         public Student()
             : this(null) { }
@@ -64,19 +64,13 @@ namespace Program
             this.Course = course;
             this.Subject = subject;
             this.University = university;
-            instanceCounter++;
+            instances++;
         }
 
-        public void DisplayStudentInfo()
+        public void DisplayInfo()
         {
-            Console.WriteLine("\nStudent Information:");
-            Console.WriteLine("-------------------------------------\n");
-            Console.WriteLine("  Name: " + this.FullName);
-            Console.WriteLine("  E-Mail: " + this.Email);
-            Console.WriteLine("  Phone Number: " + this.PhoneNumber);
-            Console.WriteLine("  Course: " + this.Course);
-            Console.WriteLine("  Study subject: " + this.Subject);
-            Console.WriteLine("  University: " + this.University);
+            Console.WriteLine("\nName: {0}, E-Mail: {1},\nPhone Number: {2}, Course: {3}, Study subject: {4}, University: {5}\n",
+                this.fullName, this.Email, this.PhoneNumber, this.Course, this.Subject, this.University);
         }
 
         public static void Main(string[] args)
@@ -87,7 +81,7 @@ namespace Program
             Student student4 = new Student("Anakin Skywalker", "anakinskywalker@starmail.com", 222222222);
             Student student5 = new Student("Luke Skywalker", "lukeskywalker@starmail.com", 1111111111, 10,
                 Student.Subjects.Philosophy, Student.Universities.Standford);
-            student5.DisplayStudentInfo();
+            student5.DisplayInfo();
         }
     }
 }

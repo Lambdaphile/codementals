@@ -9,7 +9,7 @@
 |     which have different lists of parameters (for complete
 |     information about a student or part of it).
 |     Data, which has no initial value to be initialized with null.
-|     Use nullable types for all non-mandatory data
+|     Use nullable types for all non-mandatory data.
 |
 | Solutions and Guidelines:
 |
@@ -38,6 +38,7 @@ namespace Program
         private Universities university;
 
         public Student()
+            : this(null)
         {
 
         }

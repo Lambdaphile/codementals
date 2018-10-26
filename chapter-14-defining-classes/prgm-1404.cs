@@ -33,7 +33,7 @@ namespace Program
         private Subjects subject;
         public enum Universities { Standford, IBM, Harvard }
         private Universities university;
-        public static int instanceCounter = 0;
+        public static int instances = 0;
 
         public Student()
             : this(null) { }
@@ -55,19 +55,13 @@ namespace Program
             this.course = course;
             this.subject = subject;
             this.university = university;
-            instanceCounter++;
+            instances++;
         }
 
         public void DisplayInfo()
         {
-            Console.WriteLine("\nStudent Information:");
-            Console.WriteLine("-------------------------------------\n");
-            Console.WriteLine("  Name: " + this.fullName);
-            Console.WriteLine("  E-Mail: " + this.email);
-            Console.WriteLine("  Phone Number: " + this.phoneNumber);
-            Console.WriteLine("  Course: " + this.course);
-            Console.WriteLine("  Study subject: " + this.subject);
-            Console.WriteLine("  University: " + this.university);
+            Console.WriteLine("\nName: {0}, E-Mail: {1},\nPhone Number: {2}, Course: {3}, Study subject: {4}, University: {5}\n",
+                this.fullName, this.Email, this.PhoneNumber, this.Course, this.Subject, this.University);
         }
 
         public static void Main(string[] args)

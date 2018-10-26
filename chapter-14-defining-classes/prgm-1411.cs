@@ -158,7 +158,6 @@ namespace Program
                 GSM gsm1 = new GSM();
                 GSM gsm2 = new GSM("Mi Max 3", "Xiaomi");
                 GSM gsm3 = new GSM("Poccophone", "Xiaomi", 300);
-
             }
             catch (Exception gmsException)
             {
