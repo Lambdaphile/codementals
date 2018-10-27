@@ -37,7 +37,7 @@ namespace Program
         }
 
         public GSM(string model)
-            :this(model, null)
+            : this(model, null)
         {
 
         }
@@ -84,17 +84,17 @@ namespace Program
 
         public override string ToString()
         {
-            return "Model: " + this.model + "\nManifacturer: " + this.manufacturer + "\nPrice: " +
-                this.price + "$" +"\nOwner: " + this.owner;
+            return "Model: " + this.model + "\nManufacturer: " + this.manufacturer + "\nPrice: " +
+                this.price + "$" + "\nOwner: " + this.owner;
         }
     }
 
     public class Battery
     {
         private string model = null;
-        private int idleTime = 0;
+        private double idleTime = 0;
         private double talkHours = 0;
-        public enum BatteryType { Li_Ion, NiMH, NiCd, Li_Pol }
+        public enum BatteryType { LiIon, NiMH, NiCd, LiPol }
         private BatteryType battery;
 
         public Battery()
@@ -108,19 +108,19 @@ namespace Program
 
         }
 
-        public Battery(string model, int idleTime)
+        public Battery(string model, double idleTime)
             : this(model, idleTime, 0)
         {
 
         }
 
-        public Battery(string model, int idleTime, double talkHours)
-            : this (model, idleTime, talkHours, BatteryType.Li_Ion)
+        public Battery(string model, double idleTime, double talkHours)
+            : this(model, idleTime, talkHours, BatteryType.LiIon)
         {
 
         }
 
-        public Battery(string model, int idleTime, double talkHours, BatteryType battery)
+        public Battery(string model, double idleTime, double talkHours, BatteryType battery)
         {
             this.model = model;
             this.idleTime = idleTime;
@@ -149,57 +149,6 @@ namespace Program
         {
             this.size = size;
             this.colors = colors;
-        }
-    }
-
-    public class ClassTester
-    {
-        public static void DisplayExceptionDetails(Exception e)
-        {
-            Console.Write("\n\nDo you want to see error details? (Y/N): ");
-            string userChoice = Console.ReadLine();
-            if (userChoice == "Y" || userChoice == "y")
-                Console.WriteLine("\n" + e.StackTrace);
-        }
-
-        public static void Main(string[] args)
-        {
-            try
-            {
-                GSM gsm1 = new GSM();
-                GSM gsm2 = new GSM("Mi Max 3", "Xiaomi");
-                GSM gsm3 = new GSM("Poccophone", "Xiaomi", 300);
-                GSM gsm4 = new GSM("6t", "OnePlus", 500, "Chewbacca");
-                Console.WriteLine(gsm4);
-            }
-            catch (Exception gmsException)
-            {
-                Console.WriteLine("GSM class has problem.");
-                DisplayExceptionDetails(gmsException);
-            }
-
-            try
-            {
-                Battery batter1 = new Battery("Li-Ion", 30);
-                Battery battery2 = new Battery("Li-Ion", 40, 6);
-                Battery battery3 = new Battery("f", 0, 0, Battery.BatteryType.Li_Ion);
-            }
-            catch (Exception batteryException)
-            {
-                Console.WriteLine("Battery class problem.");
-                DisplayExceptionDetails(batteryException);
-            }
-
-            try
-            {
-                Display display1 = new Display(6.44);
-                Display display2 = new Display(6.44, 160.000);
-            }
-            catch (Exception displayException)
-            {
-                Console.WriteLine("Display class problem.");
-                DisplayExceptionDetails(displayException);
-            }
         }
     }
 }

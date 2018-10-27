@@ -29,7 +29,7 @@ namespace Program
     {
         private string fullName = null;
         private string email = null;
-        private int phoneNumber;
+        private long phoneNumber;
         private int course = 0;
         public enum Subjects { Math, Physics, Philosophy }
         private Subjects subject;
@@ -39,7 +39,7 @@ namespace Program
 
         public string FullName { get => fullName; set => fullName = value; }
         public string Email { get => email; set => email = value; }
-        public int PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
+        public long PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public int Course { get => course; set => course = value; }
         public Subjects Subject { get => subject; set => subject = value; }
         public Universities University { get => university; set => university = value; }
@@ -53,10 +53,10 @@ namespace Program
         public Student(string fullName, string email)
             : this(fullName, email, 0) { }
 
-        public Student(string fullName, string email, int phoneNumber)
+        public Student(string fullName, string email, long phoneNumber)
             : this(fullName, email, phoneNumber, 0, Subjects.Math, Universities.Harvard) { }
 
-        public Student(string fullName, string email, int phoneNumber, int course, Subjects subject, Universities university)
+        public Student(string fullName, string email, long phoneNumber, int course, Subjects subject, Universities university)
         {
             this.FullName = fullName;
             this.Email = email;
@@ -80,7 +80,7 @@ namespace Program
             Student student3 = new Student("Han Solo", "hansolo@starmail.com");
             Student student4 = new Student("Anakin Skywalker", "anakinskywalker@starmail.com", 222222222);
             Student student5 = new Student("Luke Skywalker", "lukeskywalker@starmail.com", 1111111111, 10,
-                Student.Subjects.Philosophy, Student.Universities.Standford);
+                Subjects.Philosophy, Universities.Standford);
             student5.DisplayInfo();
         }
     }

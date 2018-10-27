@@ -76,8 +76,8 @@ namespace Program
     public class Battery
     {
         private string model = null;
-        private int idleTime = 0;
-        private int talkHours = 0;
+        private double idleTime = 0;
+        private double talkHours = 0;
 
         public Battery()
         {
@@ -90,13 +90,13 @@ namespace Program
 
         }
 
-        public Battery(string model, int idleTime)
+        public Battery(string model, double idleTime)
             : this(model, idleTime, 0)
         {
 
         }
 
-        public Battery(string model, int idleTime, int talkHours)
+        public Battery(string model, double idleTime, double talkHours)
         {
             this.model = model;
             this.idleTime = idleTime;
@@ -127,52 +127,20 @@ namespace Program
         }
     }
 
-    public class Tester
+    public class Program
     {
-        public static void DisplayErrorDetails(Exception e)
-        {
-            Console.Write("\n\nDo you want to see error details? (Y/N): ");
-            string userChoice = Console.ReadLine();
-            if (userChoice == "Y" || userChoice == "y")
-                Console.WriteLine(e.StackTrace);
-        }
-
         public static void Main(string[] args)
         {
-            try
-            {
-                GSM gsm1 = new GSM();
-                GSM gsm2 = new GSM("Mi Max 3", "Xiaomi");
-                GSM gsm3 = new GSM("Poccophone", "Xiaomi", 300);
-                GSM gsm4 = new GSM("6t", "OnePlus", 500, "Chewbacca", "Coolness B)");
-            }
-            catch (Exception gmsException)
-            {
-                Console.WriteLine("GSM class has problem.");
-                DisplayErrorDetails(gmsException);
-            }
+            GSM gsm1 = new GSM();
+            GSM gsm2 = new GSM("Mi Max 3", "Xiaomi");
+            GSM gsm3 = new GSM("Poccophone", "Xiaomi", 300);
+            GSM gsm4 = new GSM("6t", "OnePlus", 500, "Chewbacca", "Coolness B)");
 
-            try
-            {
-                Battery batter1 = new Battery("Li-Ion", 30);
-                Battery battery2 = new Battery("Li-Ion", 40, 6);
-            }
-            catch (Exception batteryException)
-            {
-                Console.WriteLine("Battery class problem.");
-                DisplayErrorDetails(batteryException);
-            }
+            Battery battery1 = new Battery();
+            Battery battery2 = new Battery("SBPL0086903", 210.00, 7.05);
 
-            try
-            {
-                Display display1 = new Display(6.44);
-                Display display2 = new Display(6.44, 160.000);
-            }
-            catch (Exception displayException)
-            {
-                Console.WriteLine("Display class problem.");
-                DisplayErrorDetails(displayException);
-            }
+            Display display1 = new Display(6.44);
+            Display display2 = new Display(6.44, 160.000);
         }
     }
 }

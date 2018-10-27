@@ -3,15 +3,16 @@
 | Chapter 14. Defining Classes
 |--------------------------------------------------------------------------
 |
-| Exercise 6:
+| Exercise 14:
 |
-|     Write a class StudentTest, which has to test
-|     the functionality of the class Student.
+|     Write a class GSMTest, which has to test the functionality
+|     of class GSM. Create few objects of the class and store them
+|     into an array. Display information about the created objects.
+|     Display information about the static field nokiaN95.
 |
 | Solutions and Guidelines:
 |
-|     Create a few students and display the whole information
-|     for each one of them.
+|     Add a method PrintInfo() in class GSM.
 |
 */
 
@@ -23,88 +24,169 @@ using System.Threading.Tasks;
 
 namespace Program
 {
-    public class Student
+    public class GSM
     {
-        private string fullName = null;
-        private string email = null;
-        private int phoneNumber;
-        private int course = 0;
-        public enum Subjects { Math, Physics, Philosophy }
-        private Subjects subject;
-        public enum Universities { Standford, IBM, Harvard }
-        private Universities university;
-        public static int instanceCounter = 0;
+        private string model = null;
+        private string manufacturer = null;
+        private double price = 0;
+        private string owner = null;
+        private string features = null;
+        private static string nokia95 = "Nokia 95";
 
-        public string FullName { get => fullName; set => fullName = value; }
-        public string Email { get => email; set => email = value; }
-        public int PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
-        public int Course { get => course; set => course = value; }
+        public string Model { get => model; set => model = value; }
+        public string Manufacturer { get => manufacturer; set => manufacturer = value; }
+        public double Price { get => price; set => price = value; }
+        public string Owner { get => owner; set => owner = value; }
+        public string Features { get => features; set => features = value; }
 
-        public Student()
-            : this(null) { }
-
-        public Student(string fullName)
-            : this(fullName, null) { }
-
-        public Student(string fullName, string email)
-            : this(fullName, email, 0) { }
-
-        public Student(string fullName, string email, int phoneNumber)
-            : this(fullName, email, phoneNumber, 0, Subjects.Math, Universities.Harvard) { }
-
-        public Student(string fullName, string email, int phoneNumber, int course, Subjects subject, Universities university)
+        public GSM()
         {
-            this.FullName = fullName;
-            this.Email = email;
-            this.PhoneNumber = phoneNumber;
-            this.Course = course;
-            this.subject = subject;
-            this.university = university;
-            instanceCounter++;
+
         }
 
-        public void DisplayStudentInfo()
+        public GSM(string model)
+            : this(model, null)
         {
-            Console.WriteLine("\nStudent Information:");
-            Console.WriteLine("-------------------------------------\n");
-            Console.WriteLine("  Name: " + this.FullName);
-            Console.WriteLine("  E-Mail: " + this.Email);
-            Console.WriteLine("  Phone Number: " + this.PhoneNumber);
-            Console.WriteLine("  Course: " + this.Course);
-            Console.WriteLine("  Study subject: " + this.subject);
-            Console.WriteLine("  University: " + this.university);
+
         }
 
-        public static void Main(string[] args)
+        public GSM(string model, string manufacturer)
+            : this(model, manufacturer, 0)
         {
-            Student student1 = new Student();
-            Student student2 = new Student("Chewbacca", "chewbacca@starmail.com", 1111111111);
-            Student student3 = new Student("Han Solo", "hansolo@starmail.com", 222222222, 10, Subjects.Philosophy, Universities.Standford);
 
-            Tester.TestClassFunctionality(student1);
-            Tester.TestClassFunctionality(student2);
-            Tester.TestClassFunctionality(student3);
+        }
+
+        public GSM(string model, string manufacturer, double price)
+            : this(model, manufacturer, price, null)
+        {
+
+        }
+
+        public GSM(string model, string manufacturer, double price, string owner)
+            : this(model, manufacturer, price, owner, null)
+        {
+
+        }
+
+        public GSM(string model, string manufacturer, double price, string owner, string features)
+        {
+            this.Model = model;
+            this.Manufacturer = manufacturer;
+            this.Price = price;
+            this.Owner = owner;
+            this.Features = features;
+        }
+
+        public static void DisplayNokia95Info()
+        {
+            Console.WriteLine(nokia95);
+        }
+
+        public void PrintInfo()
+        {
+            Console.WriteLine("Model: " + this.Model + "\nManufacturer: " + this.Manufacturer + "\nPrice: " +
+                this.Price + "$" + "\nOwner: " + this.Owner);
+        }
+
+        public override string ToString()
+        {
+            return "Model: " + this.Model + "\nManufacturer: " + this.Manufacturer + "\nPrice: " +
+                this.Price + "$" + "\nOwner: " + this.Owner;
         }
     }
 
-    public class Tester
+    public class Battery
     {
-        public static void TestClassFunctionality(Student student)
+        private string model = null;
+        private double idleTime = 0;
+        private double talkHours = 0;
+        public enum BatteryType { LiIon, NiMH, NiCd, LiPol }
+        private BatteryType battery;
+
+        public string Model { get => model; set => model = value; }
+        public double IdleTime { get => idleTime; set => idleTime = value; }
+        public double TalkHours { get => talkHours; set => talkHours = value; }
+
+        public Battery()
         {
-            try
-            {
-                student.DisplayStudentInfo();
-            }
-            catch (Exception exc)
-            {
-                Console.WriteLine("\nThere's problem with displaying student info.");
-                Console.Write("\n\nWould you like to see more details?(Y/N): ");
-                char userChoice = Console.ReadKey().KeyChar;
-                if (userChoice == 'Y' || userChoice == 'y')
-                    Console.WriteLine("\n\n" + exc.StackTrace);
-                else
-                    Console.WriteLine("\nOkay, bye!");
-            }
+
+        }
+
+        public Battery(string model)
+            : this(model, 0)
+        {
+
+        }
+
+        public Battery(string model, double idleTime)
+            : this(model, idleTime, 0)
+        {
+
+        }
+
+        public Battery(string model, double idleTime, double talkHours)
+            : this(model, idleTime, talkHours, BatteryType.LiIon)
+        {
+
+        }
+
+        public Battery(string model, double idleTime, double talkHours, BatteryType battery)
+        {
+            this.Model = model;
+            this.IdleTime = idleTime;
+            this.TalkHours = talkHours;
+            this.battery = battery;
+        }
+    }
+
+    public class Display
+    {
+        private double size;
+        private double colors;
+
+        public double Size { get => size; set => size = value; }
+        public double Colors { get => colors; set => colors = value; }
+
+        public Display()
+        {
+
+        }
+
+        public Display(double size)
+            : this(size, 0)
+        {
+
+        }
+
+        public Display(double size, double colors)
+        {
+            this.Size = size;
+            this.Colors = colors;
+        }
+    }
+
+    public class GSMTest
+    {
+        public static void Main(string[] args)
+        {
+            // Creating few objects from class GSM
+            GSM gsm1 = new GSM();
+            GSM gsm2 = new GSM("6t", "OnePlus", 400);
+            GSM gsm3 = new GSM("Poccophone", "Xiaomi", 250, "Chewbacca", "Coolness");
+
+            // Storing created GSM objects into an array
+            object[] testArray = new object[2];
+            testArray[0] = gsm1;
+            testArray[1] = gsm2;
+            testArray[2] = gsm3;
+
+            // Displaying information about the created objects
+            gsm1.PrintInfo();
+            gsm2.PrintInfo();
+            gsm3.PrintInfo();
+
+            // Displaying info about the static field nokiaN95
+            GSM.DisplayNokia95Info();
         }
     }
 }

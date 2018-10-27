@@ -36,8 +36,8 @@ namespace Program
     public class Battery
     {
         string model;
-        int idleTime;
-        int talkHours;
+        double idleTime;
+        double talkHours;
     }
 
     public class Display

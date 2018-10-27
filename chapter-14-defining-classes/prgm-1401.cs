@@ -28,7 +28,7 @@ namespace Program
         string fullName;
         string email;
         int course;
-        int phoneNumber;
+        long phoneNumber;
         enum Subjects { Math, Physics, Philosophy }
         private Subjects subject;
         enum Universities { Standford, IBM, Harvard }

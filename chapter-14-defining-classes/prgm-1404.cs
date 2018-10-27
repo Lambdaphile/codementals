@@ -27,7 +27,7 @@ namespace Program
     {
         private string fullName = null;
         private string email = null;
-        private int phoneNumber = 0;
+        private long phoneNumber = 0;
         private int course = 0;
         public enum Subjects { Math, Physics, Philosophy }
         private Subjects subject;
@@ -44,10 +44,10 @@ namespace Program
         public Student(string fullName, string email)
             : this(fullName, email, 0) { }
 
-        public Student(string fullName, string email, int phoneNumber)
+        public Student(string fullName, string email, long phoneNumber)
             : this(fullName, email, phoneNumber, 0, Subjects.Math, Universities.Harvard) { }
 
-        public Student(string fullName, string email, int phoneNumber, int course, Subjects subject, Universities university)
+        public Student(string fullName, string email, long phoneNumber, int course, Subjects subject, Universities university)
         {
             this.fullName = fullName;
             this.email = email;
@@ -61,7 +61,7 @@ namespace Program
         public void DisplayInfo()
         {
             Console.WriteLine("\nName: {0}, E-Mail: {1},\nPhone Number: {2}, Course: {3}, Study subject: {4}, University: {5}\n",
-                this.fullName, this.Email, this.PhoneNumber, this.Course, this.Subject, this.University);
+                this.fullName, this.email, this.phoneNumber, this.course, this.subject, this.university);
         }
 
         public static void Main(string[] args)

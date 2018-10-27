@@ -3,16 +3,16 @@
 | Chapter 14. Defining Classes
 |--------------------------------------------------------------------------
 |
-| Exercise 13:
+| Exercise 15:
 |
-|     Define properties to encapsulate the data in classes GSM,
-|     Battery and Display.
+|     Create a class Call, which contains information about a call
+|     made via mobile phone. It should contain information about date,
+|     time of start and duration of the call.
 |
 | Solutions and Guidelines:
 |
-|     In classes GSM, Battery and Display define suitable private fields
-|     and generate get / set. You can use automatic generation
-|     in Visual Studio.
+|     Read about the class List<T> in Internet. The class GSM
+|     has to store it's conversations in a list of type List<Call>.
 |
 */
 
@@ -80,6 +80,12 @@ namespace Program
         public static void DisplayNokia95Info()
         {
             Console.WriteLine(nokia95);
+        }
+
+        public void PrintInfo()
+        {
+            Console.WriteLine("Model: " + this.Model + "\nManufacturer: " + this.Manufacturer + "\nPrice: " +
+                this.Price + "$" + "\nOwner: " + this.Owner);
         }
 
         public override string ToString()
@@ -156,6 +162,20 @@ namespace Program
         {
             this.Size = size;
             this.Colors = colors;
+        }
+    }
+
+    public class Call
+    {
+        DateTime date;
+        string time;
+        TimeSpan duration;
+
+        public static void Main(string[] args)
+        {
+            List<Call> conversation = new List<Call>();
+            conversation.Add(new Call() { date = DateTime.Today, time = DateTime.Now.ToString("hh:mm"), duration = TimeSpan.MaxValue });
+            Console.WriteLine(conversation[0]);
         }
     }
 }
