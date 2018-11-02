@@ -3,26 +3,28 @@
 | Chapter 7. Arrays
 |--------------------------------------------------------------------------
 |
-| # Exercise 5:
+| Exercise 5:
 |
-|   - Write a program, which finds the maximal sequence of consecutively
+|     Write a program, which finds the maximal sequence of consecutively
 |     placed increasing integers.
-|     Example: {3, 2, 3, 4, 2, 2, 4} -> {2, 3, 4}.
 |
-| # Solutions and Guidelines:
+|       * Example: {3, 2, 3, 4, 2, 2, 4} -> {2, 3, 4}.
 |
-|   - This exercise is very similar to the previous one,
+| Solutions and Guidelines:
+|
+|     This exercise is very similar to the previous one,
 |     but we have a continuation of the current sequence
 |     when the next element is bigger.
 |
 */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Arrays
+namespace Program
 {
     class Program
     {

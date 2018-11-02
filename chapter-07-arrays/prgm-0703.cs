@@ -3,37 +3,32 @@
 | Chapter 7. Arrays
 |--------------------------------------------------------------------------
 |
-| # Exercise 3:
+| Exercise 3:
 |
-|   - Write a program, which compares two arrays of type char
-|     lexicographically (character by character) and checks, which
-|     one is first in the lexicographical order.
+|     Write a program, which compares two arrays of type char
+|     lexicographically (character by character) and checks,
+|     which one is first in the lexicographical order.
 |
-| # Solutions and Guidelines:
+| Solutions and Guidelines:
 |
-|   - In lexicographic order the elements are compared one by one
-|     starting from the very left.
-|
-|     If the elements are not the same, the array, whose element
-|     is smaller (comes earlier in the alphabet), comes first.
-|
-|     If the elements are equal, the next character is
-|     compared.
-|
-|     If the end of one of the arrays is reached, without
+|     In lexicographic order the elements are compared one by one
+|     starting from the very left. If the elements are not the same,
+|     the array, whose element is smaller (comes earlier in the alphabet),
+|     comes first. If the elements are equal, the next character
+|     is compared. If the end of one of the arrays is reached, without
 |     finding different elements, the shorter array is the smaller
 |     (comes earlier lexicographically).
-|
 |     If all elements are equal, the arrays are equal.
 |
 */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Arrays
+namespace Program
 {
     class Program
     {

@@ -3,27 +3,28 @@
 | Chapter 7. Arrays
 |--------------------------------------------------------------------------
 |
-| # Exercise 2:
+| Exercise 2:
 |
-|   - Write a program, which reads two arrays from the console and checks
-|     whether they are equal (two arrays are equal when they are of equal
-|     length and all of their elements, which have the
-|     same index, are equal).
+|     Write a program, which reads two arrays from the console
+|     and checks whether they are equal (two arrays are equal when
+|     they are of equal length and all of their elements, which
+|     have the same index, are equal).
 |
-| # Solutions and Guidelines:
+| Solutions and Guidelines:
 |
-|   - Use an int[] array and a for-loop.Two arrays are equal if they have
-|     the same value for the length and the values for their elements.
-|     You can check for the second condition using a for-loop.
+|     Use an int[] array and a for-loop. Two arrays are equal if
+|     they have the same value for the length and the values for their
+|     elements. You can check for the second condition using a for-loop.
 |
 */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Arrays
+namespace Program
 {
     class Program
     {

@@ -3,17 +3,17 @@
 | Chapter 7. Arrays
 |--------------------------------------------------------------------------
 |
-| # Exercise 6:
+| Exercise 6:
 |
-|   - Write a program, which finds the maximal sequence of increasing
+|     Write a program, which finds the maximal sequence of increasing
 |     elements in an array arr[n]. It is not necessary the elements
 |     to be consecutively placed.
 |
-|     E.g.: {9, 6, 2, 7, 4, 7, 6, 5, 8, 4} -> {2, 4, 6, 8}.
+|       * E.g.: {9, 6, 2, 7, 4, 7, 6, 5, 8, 4} -> {2, 4, 6, 8}.
 |
-| # Solutions and Guidelines:
+| Solutions and Guidelines:
 |
-|   - We can solve the problem with two nested loops and one more array
+|     We can solve the problem with two nested loops and one more array
 |     len[0...n-1]. In the array len[i] we can keep the length of the
 |     longest consecutively increasing sequence, which starts somewhere
 |     in the array (it does not matter where exactly) and ends with
@@ -46,13 +46,14 @@
 |     sequence in reversed order (from the last to the first).
 |
 */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SystemrThreading.Tasks;
+using System.Threading.Tasks;
 
-namespace Arrays
+namespace Program
 {
     class Program
     {
