@@ -30,7 +30,7 @@ using System.Threading.Tasks;
 
 namespace Program
 {
-    public class Program
+    class Program
     {
         public static void Main(string[] args)
         {
@@ -44,10 +44,10 @@ namespace Program
             int index = quote.IndexOf(keyword);
             int counter = 0;
 
-            while (index != -1)
+            while(index != -1)
             {
-                index = quote.IndexOf(keyword, index + keyword.Length);
                 counter++;
+                index = quote.IndexOf(keyword, index + keyword.Length);
             }
 
             Console.WriteLine($"\nIn the given text substring \"{keyword}\" has {counter} occurrences.");
