@@ -43,10 +43,11 @@ namespace Program
                     bracketCounter--;
             }
 
-            if (bracketCounter != 0)
-                return false;
+
+            if (bracketCounter == 0)
+                return true; // Expressions is correct
             else
-                return true;
+                return false; // Expression is inocorrect
         }
 
         public static void Main(string[] args)

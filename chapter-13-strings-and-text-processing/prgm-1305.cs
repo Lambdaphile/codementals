@@ -29,36 +29,44 @@
 |
 */
 
-// NOT FINISHED YET!
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Program
 {
     class Program
     {
+        public static string RemoveTagsFromText(string text, string openingTag, string closingTag)
+        {
+            int openingTagIndex = text.IndexOf(openingTag);
+            int closingTagIndex = text.IndexOf(closingTag);
+
+            while(openingTagIndex != -1)
+            {
+                // Getting the <opening tag> + text + <closing tag> part of the text
+                string temp1 = text.Substring(openingTagIndex, (closingTagIndex + closingTag.Length) - openingTagIndex);
+                // Getting the text inside tags and applying ToUpper() function on it
+                string temp2 = text.Substring(openingTagIndex + openingTag.Length, closingTagIndex - (openingTagIndex + openingTag.Length)).ToUpper();
+                // Replace <opening tag> + text + <closing tag> part with text in uppercase
+                text = text.Replace(temp1, temp2);
+
+                openingTagIndex = text.IndexOf(openingTag);
+                closingTagIndex = text.IndexOf(closingTag);
+            }
+            return text;
+        }
+
         public static void Main(string[] args)
         {
             string quote =
-                "We are living in a<upcase> yellow submarine </upcase>." +
+                "We are living in a <upcase>yellow submarine</upcase>. " +
                 "We don't have <upcase>anything</upcase> else.";
 
-            int openingUpcaseIndex;
-            int closingUpcaseIndex;
-
-            openingUpcaseIndex = quote.IndexOf("<upcase>");
-            closingUpcaseIndex = quote.IndexOf("</upcase>");
-            string temp = null;
-
-                quote = quote.Substring(openingUpcaseIndex + 8, closingUpcaseIndex - (openingUpcaseIndex + 8)).ToUpper();
-
-            Q
-            Console.WriteLine(quote);
-
+            string tagsFreeText = RemoveTagsFromText(quote, "<upcase>", "</upcase>");
+            Console.WriteLine(tagsFreeText);
         }
     }
 }
