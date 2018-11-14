@@ -5,30 +5,34 @@
 |
 | Exercise 10:
 |
-|     Write a program that extracts from a text all
-|     sentences that contain a particular word.
-|     We accept that the sentences are separated from
-|     each other by the character "." and the words
-|     are separated from one another by a character which
-|     is not a letter.
+|     A string is given, composed of several "forbidden" words
+|     separated by commas. Also a text is given, containing
+|     those words. Write a program that replaces the forbidden
+|     words with asterisks.
 |
-|       * Sample text: We are living in a yellow submarine.
-|         We don't have anything else. Inside the submarine
-|         is very tight. So we are drinking all the day.
-|         We will move out of it in 5 days.
+|       * Sample text:
 |
-|       * Sample result: We are living in a yellow submarine.
-|         We will move out of it in 5 days.
+|         Microsoft announced its next generation C#
+|         compiler today. It uses advanced parser
+|         and special optimizer for the Microsoft CLR.
+|
+|     Sample string containing the forbidden words: "C#,
+|     CLR, Microsoft".
+|
+|       * Sample result:
+|
+|           ********* announced its next generation **
+|           compiler today. It uses advanced parser
+|           and special optimizer for the ********* ***.
 |
 | Solutions and Guidelines:
 |
-|     First split the sentences from each other by using
-|     the Split(...) method. Then make sure that each
-|     sentence contains the searched word by searching
-|     for it as a substring with IndexOf(...) and if you
-|     find it check whether there is a separator (character,
-|     which is not a letter or start / end of the string)
-|     on the left and on the right of the found substring.
+|     First split the sentences from each other by using the Split(...)
+|     method. Then make sure that each sentence contains the searched
+|     word by searching for it as a substring with IndexOf(...)
+|     and if you find it check whether there is a separator (character,
+|     which is not a letter or start / end of the string) on the left
+|     and on the right of the found substring.
 |
 */
 
@@ -44,7 +48,7 @@ namespace Program
     {
         public static void Main(string[] args)
         {
-
+            
         }
     }
 }

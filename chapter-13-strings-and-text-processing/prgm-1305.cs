@@ -11,13 +11,13 @@
 |
 |       * Example:
 |
-|         We are living in a <upcase>yellow submarine</upcase>.
-|         We don't have <upcase>anything</upcase> else.
+|           We are living in a <upcase>yellow submarine</upcase>.
+|           We don't have <upcase>anything</upcase> else.
 |
 |       * Result:
 |
-|         We are living in a YELLOW SUBMARINE.
-|         We don't have ANYTHING else.
+|           We are living in a YELLOW SUBMARINE.
+|           We don't have ANYTHING else.
 |
 | Solutions and Guidelines:
 |

@@ -10,6 +10,7 @@
 |
 |       * Example of expression with correctly placed
 |         brackets: ((a+b)/5-d).
+|
 |       * Example of an incorrect expression: )(a+b)).
 |
 | Solutions and Guidelines:
