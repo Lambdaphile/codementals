@@ -34,7 +34,7 @@ namespace Program
             Console.WriteLine("{0, 15:X}", n);
             Console.WriteLine("{0, 15:P2}", n);
             Console.WriteLine("{0, 15:C}", n);
-            Console.WriteLine("{0, 15:0.###E+00}", n);
+            Console.WriteLine("{0, 15:0.##E+00}", n);
         }
     }
 }
