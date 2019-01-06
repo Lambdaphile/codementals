@@ -125,7 +125,6 @@ namespace Program
                 }
                 Console.WriteLine();
             }
-
         }
     }
 }

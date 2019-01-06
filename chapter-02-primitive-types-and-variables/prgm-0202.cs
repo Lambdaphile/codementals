@@ -18,10 +18,6 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Program
 {
@@ -29,12 +25,12 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            float a = 5;
-            float b = -5.01f;
-            double c = 34.567839023;
-            float d = 12.345f;
-            double e = 8923.1234857;
-            decimal f = 3456.091124875956542151256683467m;
+            float num1 = 5;
+            float num2 = -5.01f;
+            double num3 = 34.567839023;
+            float num4 = 12.345f;
+            double num5 = 8923.1234857;
+            decimal num6 = 3456.091124875956542151256683467m;
         }
     }
 }

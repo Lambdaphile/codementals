@@ -20,10 +20,6 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Program
 {
@@ -31,20 +27,20 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            sbyte a = 52;
-            byte b = 130;
-            sbyte c = -115;
-            int d = 4825932;
-            sbyte e = 97;
-            short f = -10000;
-            short g = 20000;
-            byte h = 224;
-            int i = 970700000;
-            sbyte j = 112;
-            sbyte k = -44;
-            int l = -1000000;
-            short m = 1990;
-            long n = 123456789123456789;
+            sbyte num1 = 52;
+            byte num2 = 130;
+            sbyte num3 = -115;
+            int num4 = 4825932;
+            sbyte num5 = 97;
+            short num6 = -10000;
+            short num7 = 20000;
+            byte num8 = 224;
+            int num9 = 970700000;
+            sbyte num10 = 112;
+            sbyte num11 = -44;
+            int num12 = -1000000;
+            short num13 = 1990;
+            long num14 = 123456789123456789;
         }
     }
 }
