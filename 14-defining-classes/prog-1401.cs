@@ -25,10 +25,10 @@ namespace Program
 {
     class Student
     {
-        string fullName;
-        string email;
-        int course;
-        long phoneNumber;
+        private string fullName;
+        private string email;
+        private int course;
+        private long phoneNumber;
         enum Subjects { Math, Physics, Philosophy }
         private Subjects subject;
         enum Universities { Standford, IBM, Harvard }

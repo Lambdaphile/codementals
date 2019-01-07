@@ -44,7 +44,6 @@ namespace Program
                     bracketCounter--;
             }
 
-
             if (bracketCounter == 0)
                 return true; // Expressions is correct
             else
