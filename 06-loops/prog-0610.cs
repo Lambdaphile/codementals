@@ -26,10 +26,6 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Program
 {
@@ -42,9 +38,9 @@ namespace Program
             int N = int.Parse(Console.ReadLine());
             Console.WriteLine();
 
-            for (int outterLoop = 1; outterLoop <= N; outterLoop++)
+            for (int outerLoop = 1; outerLoop <= N; outerLoop++)
             {
-                for (int innerLoop = outterLoop; innerLoop <= outterLoop + N - 1; innerLoop++)
+                for (int innerLoop = outerLoop; innerLoop <= outerLoop + N - 1; innerLoop++)
                 {
                     Console.Write("{0} ", innerLoop);
                 }

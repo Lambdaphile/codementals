@@ -18,10 +18,6 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Program
 {
@@ -29,7 +25,7 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please, the lenght of the wanted sequence (from 1 to N):");
+            Console.WriteLine("Please, the length of the wanted sequence (from 1 to N):");
             Console.Write("\nN = ");
             int n = Int32.Parse(Console.ReadLine());
 

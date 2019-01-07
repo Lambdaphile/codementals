@@ -32,10 +32,6 @@
 |
 */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Arrays
 {
@@ -45,7 +41,7 @@ namespace Arrays
         {
             int[] arrayX = { 4, 1, 1, 4, 2, 1, 4, 4, 1, 2, 4, 1, 1 };
 
-            int occurenceCounter = 1, maxOccurenceCounter = 0, maxOccuringElement = 0;
+            int occurrenceCounter = 1, maxOccurrenceCounter = 0, maxOccuringElement = 0;
             Console.Write("{");
             for (int i = 0; i < arrayX.Length - 1; i++)
             {
@@ -53,15 +49,15 @@ namespace Arrays
                 {
                     if (arrayX[j] == arrayX[i])
                     {
-                        occurenceCounter++;
+                        occurrenceCounter++;
                     }
                 }
-                if (occurenceCounter > maxOccurenceCounter)
+                if (occurrenceCounter > maxOccurrenceCounter)
                 {
-                    maxOccurenceCounter = occurenceCounter;
+                    maxOccurrenceCounter = occurrenceCounter;
                     maxOccuringElement = arrayX[i];
                 }
-                occurenceCounter = 1;
+                occurrenceCounter = 1;
 
                 //Printing part
                 if (i < arrayX.Length - 2)
@@ -73,7 +69,7 @@ namespace Arrays
                     Console.Write(" {0}, {1}", arrayX[i], arrayX[i + 1]);
                 }
             }
-            Console.Write(" }} -> {0} ({1} times).\n", maxOccuringElement, maxOccurenceCounter);
+            Console.Write(" }} -> {0} ({1} times).\n", maxOccuringElement, maxOccurrenceCounter);
         }
     }
 }

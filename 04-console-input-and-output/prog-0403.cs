@@ -20,10 +20,6 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Program
 {
@@ -43,7 +39,7 @@ namespace Program
             Console.Write("Web site: ");
             string companyWebSite = Console.ReadLine();
             Console.Write("Manager: ");
-            string companyManagaer = Console.ReadLine();
+            string companyManager = Console.ReadLine();
 
             Console.WriteLine("\nEnter manager information:");
             Console.Write("\nName: ");
@@ -61,7 +57,7 @@ namespace Program
                 "\nFax number: {3}" +
                 "\nWeb site: {4}" +
                 "\nManager: {5}", companyName, companyAddress, companyPhone,
-                companyFaxNumber, companyWebSite, companyManagaer);
+                companyFaxNumber, companyWebSite, companyManager);
 
             Console.WriteLine("\nManager Info:" +
                 "\nName: {0}" +
