@@ -17,6 +17,7 @@
 */
 
 using System;
+using System.Collections.Generic;
 
 namespace Program
 {
@@ -28,6 +29,7 @@ namespace Program
         private string owner = null;
         private string features = null;
         private static string nokia95 = "Nokia 95";
+        List<Call> conversations = new List<Call>();
 
         public string Model { get => model; set => model = value; }
         public string Manufacturer { get => manufacturer; set => manufacturer = value; }
@@ -71,6 +73,17 @@ namespace Program
             this.Price = price;
             this.Owner = owner;
             this.Features = features;
+        }
+
+        public void Conversations(string callDate, string callBeggining, string callDuration)
+        {
+            conversations.Add(new Call() { CallDate = callDate, CallBeginning = callBeggining, CallDuration = callDuration });
+        }
+
+        public void DisplayConversations()
+        {
+            foreach (Call conversation in conversations)
+                Console.WriteLine(conversation);
         }
 
         public static void DisplayNokia95Info()
@@ -163,15 +176,45 @@ namespace Program
 
     public class Call
     {
-        DateTime date;
-        string time;
-        TimeSpan duration;
+        private string callDate = null;
+        private string callBeginning = null;
+        private string callDuration = null;
 
+        public string CallDate { get => callDate; set => callDate = value; }
+        public string CallBeginning { get => callBeginning; set => callBeginning = value; }
+        public string CallDuration { get => callDuration; set => callDuration = value; }
+
+        public Call()
+        {
+
+        }
+
+        public Call(string callDate, string callBeginning, string callDuration)
+        {
+            this.callDate = callDate;
+            this.callBeginning = callBeginning;
+            this.callDuration = callDuration;
+        }
+
+        public override string ToString()
+        {
+            return "callDate: " + CallDate + " callBeginning: " + callBeginning + " callDuration: " + callBeginning;
+        }
+    }
+
+    // I was curious about the way these classes can be used,
+    // so even that the exercise is not requiring running
+    // program I've made one to see the possible interractions.
+    public class Trigger
+    {
         public static void Main(string[] args)
         {
-            List<Call> conversation = new List<Call>();
-            conversation.Add(new Call() { date = DateTime.Today, time = DateTime.Now.ToString("hh:mm"), duration = TimeSpan.MaxValue });
-            Console.WriteLine(conversation[0]);
+            GSM myGSM = new GSM();
+            Call firstCall = new Call("date", "start", "duration");
+            Call secondCall = new Call("date2", "start2", "duration2");
+            myGSM.Conversations(firstCall.CallDate, firstCall.CallBeginning, firstCall.CallDuration);
+            myGSM.Conversations(secondCall.CallDate, secondCall.CallBeginning, secondCall.CallDuration);
+            myGSM.DisplayConversations();
         }
     }
 }

@@ -3,16 +3,14 @@
 | Chapter 14. Defining Classes
 |--------------------------------------------------------------------------
 |
-| Exercise 15:
+| Exercise 16:
 |
-|     Create a class Call, which contains information about a call
-|     made via mobile phone. It should contain information about date,
-|     time of start and duration of the call.
+|    Add a property for keeping a call history – CallHistory,
+|    which holds a list of call records.
 |
 | Solutions and Guidelines:
 |
-|     Read about the class List<T> in Internet. The class GSM
-|     has to store it's conversations in a list of type List<Call>.
+|     Return as a result the list of conversations.
 |
 */
 
@@ -29,8 +27,13 @@ namespace Program
         private string owner = null;
         private string features = null;
         private static string nokia95 = "Nokia 95";
-        List<Call> conversations = new List<Call>();
+        private List<Call> conversations = new List<Call>();
 
+        public List<Call> CallHistyory
+        {
+            get => conversations;
+        }
+        
         public string Model { get => model; set => model = value; }
         public string Manufacturer { get => manufacturer; set => manufacturer = value; }
         public double Price { get => price; set => price = value; }
@@ -80,11 +83,7 @@ namespace Program
             conversations.Add(new Call() { CallDate = callDate, CallBeginning = callBeggining, CallDuration = callDuration });
         }
 
-        public void DisplayConversations()
-        {
-            foreach (Call conversation in conversations)
-                Console.WriteLine(conversation);
-        }
+        
 
         public static void DisplayNokia95Info()
         {
@@ -202,10 +201,6 @@ namespace Program
         }
     }
 
-    // I was curious about the way these classes can be used,
-    // so I created the code under with simple logic to make use
-    // and simulate possible interactions between "GSM" and it's
-    // "conversations"...
     public class Trigger
     {
         public static void Main(string[] args)
@@ -215,7 +210,10 @@ namespace Program
             Call secondCall = new Call("date2", "start2", "duration2");
             myGSM.Conversations(firstCall.CallDate, firstCall.CallBeginning, firstCall.CallDuration);
             myGSM.Conversations(secondCall.CallDate, secondCall.CallBeginning, secondCall.CallDuration);
-            myGSM.DisplayConversations();
+            foreach (Call call in myGSM.CallHistyory)
+            {
+                Console.WriteLine(call);
+            }
         }
     }
 }
