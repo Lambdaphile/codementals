@@ -19,15 +19,15 @@ using System;
 
 namespace Program
 {
-    class Student
+    public class Student
     {
         private string fullName = null;
         private string email = null;
         private long phoneNumber;
         private int course = 0;
-        public enum Subjects { Math, Physics, Philosophy }
+        public enum Subjects { None, Math, Physics, Philosophy }
         private Subjects subject;
-        public enum Universities { Standford, IBM, Harvard }
+        public enum Universities { None, Standford, IBM, Harvard }
         private Universities university;
         public static int instances = 0;
 
@@ -48,11 +48,16 @@ namespace Program
             : this(fullName, email, 0) { }
 
         public Student(string fullName, string email, long phoneNumber)
-            : this(fullName, email, phoneNumber, 0, Subjects.Math, Universities.Harvard) { }
+            : this(fullName, email, phoneNumber, 0) { }
+
+        public Student(string fullName, string email, long phoneNumber, int course)
+            : this(fullName, email, phoneNumber, course, Subjects.None) { }
+
+        public Student(string fullName, string email, long phoneNumber, int course, Subjects subject)
+            : this(fullName, email, phoneNumber, course, subject, Universities.None) { }
 
         public Student(string fullName, string email, long phoneNumber, int course, Subjects subject, Universities university)
         {
-            this.PhoneNumber = phoneNumber;
             this.FullName = fullName;
             this.Email = email;
             this.PhoneNumber = phoneNumber;
@@ -64,8 +69,7 @@ namespace Program
 
         public void DisplayInfo()
         {
-            Console.WriteLine("\nName: {0}, E-Mail: {1},\nPhone Number: {2}, Course: {3}, Study subject: {4}, University: {5}\n",
-                this.FullName, this.Email, this.PhoneNumber, this.Course, this.Subject, this.University);
+            Console.WriteLine($"\nName: {this.fullName}, E-Mail: {this.email},\nPhone Number: {this.phoneNumber}, Course: {this.course}, Study subject: {this.subject}, University: {this.university}\n");
         }
     }
 

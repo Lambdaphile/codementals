@@ -19,15 +19,15 @@ using System;
 
 namespace Program
 {
-    class Student
+    public class Student
     {
-        private string fullName;
-        private string email;
-        private int course;
-        private long phoneNumber;
-        enum Subjects { Math, Physics, Philosophy }
+        private string fullName = null;
+        private string email = null;
+        private int course = 0;
+        private long phoneNumber = 0;
+        enum Subjects { None, Math, Physics, Philosophy }
         private Subjects subject;
-        enum Universities { Standford, IBM, Harvard }
+        enum Universities { None, Standford, IBM, Harvard }
         private Universities university;
     }
 }

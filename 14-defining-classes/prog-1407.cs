@@ -3,7 +3,7 @@
 | Chapter 14. Defining Classes
 |--------------------------------------------------------------------------
 |
-| Exercise 6:
+| Exercise 7:
 |
 |     Add a static method in class StudentTest, which creates several
 |     objects of type Student and store them in static fields.
@@ -22,27 +22,27 @@ using System;
 
 namespace Program
 {
-    class Student
+    public class Student
     {
         private string fullName = null;
         private string email = null;
-        private int phoneNumber;
+        private long phoneNumber;
         private int course = 0;
-        public enum Subjects { Math, Physics, Philosophy }
-        private Subjects subject;
-        public enum Universities { Standford, IBM, Harvard }
-        private Universities university;
+        public enum Subjects { None, Math, Physics, Philosophy }
+        private Subjects subject = 0;
+        public enum Universities { None, Standford, IBM, Harvard }
+        private Universities university = 0;
         public static int instances = 0;
 
         public string FullName { get => fullName; set => fullName = value; }
         public string Email { get => email; set => email = value; }
-        public int PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
+        public long PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public int Course { get => course; set => course = value; }
         public Subjects Subject { get => subject; set => subject = value; }
         public Universities University { get => university; set => university = value; }
 
         public Student()
-            :this (null) {}
+            : this(null) { }
 
         public Student(string fullName)
             : this(fullName, null) { }
@@ -50,12 +50,17 @@ namespace Program
         public Student(string fullName, string email)
             : this(fullName, email, 0) { }
 
-        public Student(string fullName, string email, int phoneNumber)
-            : this(fullName, email, phoneNumber, 0, Subjects.Math, Universities.Harvard) { }
+        public Student(string fullName, string email, long phoneNumber)
+            : this(fullName, email, phoneNumber, 0) { }
 
-        public Student(string fullName, string email, int phoneNumber, int course, Subjects subject, Universities university)
+        public Student(string fullName, string email, long phoneNumber, int course)
+            : this(fullName, email, phoneNumber, course, Subjects.None) { }
+
+        public Student(string fullName, string email, long phoneNumber, int course, Subjects subject)
+            : this(fullName, email, phoneNumber, course, subject, Universities.None) { }
+
+        public Student(string fullName, string email, long phoneNumber, int course, Subjects subject, Universities university)
         {
-            this.phoneNumber = phoneNumber;
             this.FullName = fullName;
             this.Email = email;
             this.PhoneNumber = phoneNumber;
@@ -67,44 +72,33 @@ namespace Program
 
         public void DisplayInfo()
         {
-            Console.WriteLine("\nName: {0}, E-Mail: {1},\nPhone Number: {2}, Course: {3}, Study subject: {4}, University: {5}\n",
-                this.fullName, this.Email, this.PhoneNumber, this.Course, this.Subject, this.University);
+            Console.WriteLine($"\nName: {this.fullName}, E-Mail: {this.email},\nPhone Number: {this.phoneNumber}, Course: {this.course}, Study subject: {this.subject}, University: {this.university}\n");
         }
     }
 
-    public class Tester
+    public class StudentTest
     {
-        public static object testStudent1;
-        static Tester()
-        {
-            Tester.testStudent1 = new Student("chewbacca", "chewbacca@starmail.com", 11111111);
-        }
+        private static Student student1;
+        private static Student student2;
+        private static Student student3;
 
-        public static object TestStudent1
-        {
-            get { return TestStudent1; }
-            set { TestStudent1 = value; }
-        }
+        public static Student Student1 { get => student1; }
+        public static Student Student2 { get => student2; }
+        public static Student Student3 { get => student3; }
 
-        public static void DisplayInfo()
+        static StudentTest()
         {
-            Console.WriteLine();
+            student1 = new Student("Luke Skywalker", "lukeskywalker@starmail.com", 1111111111, 10,
+                Student.Subjects.Philosophy, Student.Universities.Standford);
+            student2 = new Student("Anakin Skywalker", "anakinskywalker@starmail.com", 222222222);
+            student3 = student3 = new Student("Han Solo", "hansolo@starmail.com");
         }
 
         public static void Main(string[] args)
         {
-            Student student1 = new Student();
-            Student student2 = new Student("Chewbacca");
-            Student student3 = new Student("Han Solo", "hansolo@starmail.com");
-            Student student4 = new Student("Anakin Skywalker", "anakinskywalker@starmail.com", 222222222);
-            Student student5 = new Student("Luke Skywalker", "lukeskywalker@starmail.com", 1111111111, 10,
-                Student.Subjects.Philosophy, Student.Universities.Standford);
-
-            student1.DisplayInfo();
-            student2.DisplayInfo();
-            student3.DisplayInfo();
-            student4.DisplayInfo();
-            student5.DisplayInfo();
+            Console.WriteLine($"\nName: {Student1.FullName}, E-Mail: {Student1.Email},\nPhone Number: {Student1.PhoneNumber}, Course: {Student1.Course}, Study subject: {Student1.Subject}, University: {Student1.University}\n");
+            Console.WriteLine($"\nName: {Student2.FullName}, E-Mail: {Student2.Email},\nPhone Number: {Student2.PhoneNumber}, Course: {Student2.Course}, Study subject: {Student2.Subject}, University: {Student2.University}\n");
+            Console.WriteLine($"\nName: {Student3.FullName}, E-Mail: {Student3.Email},\nPhone Number: {Student3.PhoneNumber}, Course: {Student3.Course}, Study subject: {Student3.Subject}, University: {Student3.University}\n");
         }
     }
 }

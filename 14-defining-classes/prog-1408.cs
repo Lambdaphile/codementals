@@ -22,23 +22,23 @@ namespace Program
 {
     public class GSM
     {
-        string model;
-        string manufacturer;
-        double price;
-        string owner;
-        string features;
+        private string model = null;
+        private string manufacturer = null;
+        private double price = 0;
+        private string owner = null;
+        private string features = null;
     }
 
     public class Battery
     {
-        string model;
-        double idleTime;
-        double talkHours;
+        private string model = null;
+        private double idleTime = 0;
+        private double talkHours = 0;
     }
 
     public class Display
     {
-        double size;
-        double colors;
+        private double size = 0;
+        private double colors = 0;
     }
 }

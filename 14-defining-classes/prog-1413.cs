@@ -27,7 +27,7 @@ namespace Program
         private double price = 0;
         private string owner = null;
         private string features = null;
-        private static string nokia95 = "Nokia 95";
+        private static string nokia95 = "Nokia95";
 
         public string Model { get => model; set => model = value; }
         public string Manufacturer { get => manufacturer; set => manufacturer = value; }
@@ -36,33 +36,19 @@ namespace Program
         public string Features { get => features; set => features = value; }
 
         public GSM()
-        {
-
-        }
+            : this(null) { }
 
         public GSM(string model)
-            : this(model, null)
-        {
-
-        }
+            : this(model, null) { }
 
         public GSM(string model, string manufacturer)
-            : this(model, manufacturer, 0)
-        {
-
-        }
+            : this(model, manufacturer, 0) { }
 
         public GSM(string model, string manufacturer, double price)
-            : this(model, manufacturer, price, null)
-        {
-
-        }
+            : this(model, manufacturer, price, null) { }
 
         public GSM(string model, string manufacturer, double price, string owner)
-            : this(model, manufacturer, price, owner, null)
-        {
-
-        }
+            : this(model, manufacturer, price, owner, null) { }
 
         public GSM(string model, string manufacturer, double price, string owner, string features)
         {
@@ -80,8 +66,8 @@ namespace Program
 
         public override string ToString()
         {
-            return "Model: " + this.Model + "\nManufacturer: " + this.Manufacturer + "\nPrice: " +
-                this.Price + "$" + "\nOwner: " + this.Owner;
+            return "Model: " + this.model + "\nManufacturer: " + this.manufacturer + "\nPrice: " +
+                this.price + "$" + "\nOwner: " + this.owner + "\nFeatures: " + this.features + "\n";
         }
     }
 
@@ -90,7 +76,7 @@ namespace Program
         private string model = null;
         private double idleTime = 0;
         private double talkHours = 0;
-        public enum BatteryType { LiIon, NiMH, NiCd, LiPol }
+        public enum BatteryType { None, LiIon, NiMH, NiCd, LiPol }
         private BatteryType battery;
 
         public string Model { get => model; set => model = value; }
@@ -98,27 +84,16 @@ namespace Program
         public double TalkHours { get => talkHours; set => talkHours = value; }
 
         public Battery()
-        {
-
-        }
+            : this(null) { }
 
         public Battery(string model)
-            : this(model, 0)
-        {
-
-        }
+            : this(model, 0) { }
 
         public Battery(string model, double idleTime)
-            : this(model, idleTime, 0)
-        {
-
-        }
+            : this(model, idleTime, 0) { }
 
         public Battery(string model, double idleTime, double talkHours)
-            : this(model, idleTime, talkHours, BatteryType.LiIon)
-        {
-
-        }
+            : this(model, idleTime, talkHours, BatteryType.None) { }
 
         public Battery(string model, double idleTime, double talkHours, BatteryType battery)
         {
@@ -138,15 +113,10 @@ namespace Program
         public double Colors { get => colors; set => colors = value; }
 
         public Display()
-        {
-
-        }
+            : this(0) { }
 
         public Display(double size)
-            : this(size, 0)
-        {
-
-        }
+            : this(size, 0) { }
 
         public Display(double size, double colors)
         {
