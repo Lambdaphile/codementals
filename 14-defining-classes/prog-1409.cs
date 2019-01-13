@@ -28,10 +28,9 @@ namespace Program
         private string manufacturer = null;
         private double price = 0;
         private string owner = null;
-        private string features = null;
 
         public GSM()
-            :this(null) { }
+            : this(null) { }
 
         public GSM(string model)
             : this(model, null) { }
@@ -43,15 +42,11 @@ namespace Program
             : this(model, manufacturer, price, null) { }
 
         public GSM(string model, string manufacturer, double price, string owner)
-            : this(model, manufacturer, price, owner, null) { }
-
-        public GSM(string model, string manufacturer, double price, string owner, string features)
         {
             this.model = model;
             this.manufacturer = manufacturer;
             this.price = price;
             this.owner = owner;
-            this.features = features;
         }
     }
 
@@ -103,7 +98,7 @@ namespace Program
             GSM gsm1 = new GSM();
             GSM gsm2 = new GSM("Mi Max 3", "Xiaomi");
             GSM gsm3 = new GSM("Poccophone", "Xiaomi", 300);
-            GSM gsm4 = new GSM("6t", "OnePlus", 500, "Chewbacca", "Coolness B)");
+            GSM gsm4 = new GSM("6t", "OnePlus", 500, "Chewbacca");
 
             Battery battery1 = new Battery();
             Battery battery2 = new Battery("SBPL0086903", 210.00, 7.05);

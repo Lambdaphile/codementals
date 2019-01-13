@@ -26,7 +26,6 @@ namespace Program
         private string manufacturer = null;
         private double price = 0;
         private string owner = null;
-        private string features = null;
     }
 
     public class Battery

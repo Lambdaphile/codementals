@@ -43,15 +43,11 @@ namespace Program
             : this(model, manufacturer, price, null) { }
 
         public GSM(string model, string manufacturer, double price, string owner)
-            : this(model, manufacturer, price, owner, null) { }
-
-        public GSM(string model, string manufacturer, double price, string owner, string features)
         {
             this.model = model;
             this.manufacturer = manufacturer;
             this.price = price;
             this.owner = owner;
-            this.features = features;
         }
 
         public static void DisplayNokia95Info()
@@ -65,8 +61,8 @@ namespace Program
         private string model = null;
         private double idleTime = 0;
         private double talkHours = 0;
-        public enum BatteryType { None, LiIon, NiMH, NiCd, LiPol }
-        private BatteryType battery;
+        public enum BatteryTypes { None, LiIon, NiMH, NiCd, LiPol }
+        private BatteryTypes batteryType;
 
         public Battery()
             : this(null) { }
@@ -78,14 +74,14 @@ namespace Program
             : this(model, idleTime, 0) { }
 
         public Battery(string model, double idleTime, double talkHours)
-            : this(model, idleTime, talkHours, BatteryType.None) { }
+            : this(model, idleTime, talkHours, BatteryTypes.None) { }
 
-        public Battery(string model, double idleTime, double talkHours, BatteryType battery)
+        public Battery(string model, double idleTime, double talkHours, BatteryTypes battery)
         {
             this.model = model;
             this.idleTime = idleTime;
             this.talkHours = talkHours;
-            this.battery = battery;
+            this.batteryType = battery;
         }
     }
 

@@ -3,19 +3,30 @@
 | Chapter 14. Defining Classes
 |--------------------------------------------------------------------------
 |
-| Exercise 16:
+| Exercise 19:
 |
-|    Add a property for keeping a call history – CallHistory,
-|    which holds a list of call records.
+|     Create a class GSMCallHistoryTest, with which to test
+|     the functionality of the class GSM, from task 12,
+|     as an object of type GSM. Then add to it a few phone
+|     calls (Call). Display information about each phone call.
+|
+|     Assuming that the price per minute is 0.37, calculate
+|     and display the total cost of all calls.
+|
+|     Remove the longest conversation from archive with
+|     phone calls and calculate the total price for all
+|     calls again. Finally, clear the archive.
 |
 | Solutions and Guidelines:
 |
-|     Return as a result the list of conversations.
+|     Follow the instructions directly from the requirements
+|     of the task.
 |
 */
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Program
 {
@@ -52,6 +63,30 @@ namespace Program
             this.Manufacturer = manufacturer;
             this.Price = price;
             this.Owner = owner;
+        }
+
+        public void AddCall(string callDate, string callBeggining, int callDuration)
+        {
+            conversations.Add(new Call() { CallDate = callDate, CallBeginning = callBeggining, CallDuration = callDuration });
+        }
+
+        public void DeleteCall(string callDate, string callBeggining, int callDuration)
+        {
+            conversations.Remove(new Call() { CallDate = callDate, CallBeginning = callBeggining, CallDuration = callDuration });
+        }
+
+        public void DeleteCallHistory()
+        {
+            conversations.Clear();
+        }
+
+        public void CalculateTotalPrice()
+        {
+            int totalTime = 0;
+            foreach (Call call in CallHistory)
+                totalTime += call.CallDuration;
+
+            Console.WriteLine("\nTotal talk time {0}min, Total cost: {1:C2}\n\n", totalTime / 60, (totalTime / 60) * Call.Tariff);
         }
 
         public static void DisplayNokia95Info()
@@ -131,6 +166,68 @@ namespace Program
     {
         private string callDate = null;
         private string callBeginning = null;
-        private string callDuration = null;
+        private int callDuration = 0;
+        private const float tariff = 0.37f;
+
+        public string CallDate { get => callDate; set => callDate = value; }
+        public string CallBeginning { get => callBeginning; set => callBeginning = value; }
+        public int CallDuration { get => callDuration; set => callDuration = value; }
+        public static float Tariff { get => tariff; }
+
+        public Call() { }
+
+        public Call(string callDate, string callBeginning, int callDuration)
+        {
+            this.CallDate = callDate;
+            this.CallBeginning = callBeginning;
+            this.CallDuration = callDuration;
+        }
+
+        public override string ToString()
+        {
+            return $"Call Date: {CallDate}|  Call Beginning: {CallBeginning}|  Call Duration: {CallDuration}";
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            Call objAsCall = obj as Call;
+            if (objAsCall == null) return false;
+            else return Equals(objAsCall);
+        }
+
+        public bool Equals(Call other)
+        {
+            if (other == null) return false;
+            return (this.callDuration.Equals(other.callDuration));
+        }
+    }
+
+    public class GSMCallHistoryTest
+    {
+        public static void DisplayCallHistory(List<Call> callHistory)
+        {
+            foreach (Call conversation in callHistory)
+                Console.WriteLine(conversation);
+        }
+
+        public static void Main(string[] args)
+        {
+            GSM xiaomiMiMax = new GSM("Mi Max", "Xiaomi", 250, "Chewbacca");
+            xiaomiMiMax.AddCall("13/Jan/2019", "00:00", 1200);
+            xiaomiMiMax.AddCall("14/Jan/2019", "13:00", 180);
+            xiaomiMiMax.AddCall("15/Jan/2019", "13:00", 480);
+            DisplayCallHistory(xiaomiMiMax.CallHistory);
+            xiaomiMiMax.CalculateTotalPrice();
+
+            // Removing longest conversation...
+            int x = xiaomiMiMax.CallHistory.Max(max => max.CallDuration);
+            xiaomiMiMax.DeleteCall("13/Jan/2019", "00:00", 1200);
+            DisplayCallHistory(xiaomiMiMax.CallHistory);
+            xiaomiMiMax.CalculateTotalPrice();
+
+            xiaomiMiMax.DeleteCallHistory();
+            DisplayCallHistory(xiaomiMiMax.CallHistory);
+        }
     }
 }

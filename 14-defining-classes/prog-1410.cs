@@ -27,7 +27,6 @@ namespace Program
         private string manufacturer = null;
         private double price = 0;
         private string owner = null;
-        private string features = null;
         private static string nokia95 = "Nokia95";
 
         public GSM()
@@ -43,15 +42,11 @@ namespace Program
             : this(model, manufacturer, price, null) { }
 
         public GSM(string model, string manufacturer, double price, string owner)
-            : this(model, manufacturer, price, owner, null) { }
-
-        public GSM(string model, string manufacturer, double price, string owner, string features)
         {
             this.model = model;
             this.manufacturer = manufacturer;
             this.price = price;
             this.owner = owner;
-            this.features = features;
         }
 
         public static void DisplayNokia95Info()

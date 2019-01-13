@@ -26,53 +26,33 @@ namespace Program
         private string manufacturer = null;
         private double price = 0;
         private string owner = null;
-        private string features = null;
-        private static string nokia95 = "Nokia 95";
+        private static string nokia95 = "Nokia95";
         private List<Call> conversations = new List<Call>();
 
         public string Model { get => model; set => model = value; }
         public string Manufacturer { get => manufacturer; set => manufacturer = value; }
         public double Price { get => price; set => price = value; }
         public string Owner { get => owner; set => owner = value; }
-        public string Features { get => features; set => features = value; }
-        public List<Call> CallHistory { get => conversations; set => conversations = value; }
+        public List<Call> CallHistory { get => conversations; }
 
         public GSM()
-        {
-
-        }
+            : this(null) { }
 
         public GSM(string model)
-            : this(model, null)
-        {
-
-        }
+            : this(model, null) { }
 
         public GSM(string model, string manufacturer)
-            : this(model, manufacturer, 0)
-        {
-
-        }
+            : this(model, manufacturer, 0) { }
 
         public GSM(string model, string manufacturer, double price)
-            : this(model, manufacturer, price, null)
-        {
-
-        }
+            : this(model, manufacturer, price, null) { }
 
         public GSM(string model, string manufacturer, double price, string owner)
-            : this(model, manufacturer, price, owner, null)
-        {
-
-        }
-
-        public GSM(string model, string manufacturer, double price, string owner, string features)
         {
             this.Model = model;
             this.Manufacturer = manufacturer;
             this.Price = price;
             this.Owner = owner;
-            this.Features = features;
         }
 
         public void AddCall(string callDate, string callBeggining, string callDuration)
@@ -85,7 +65,7 @@ namespace Program
             conversations.Remove(new Call() { CallDate = callDate, CallBeginning = callBeggining, CallDuration = callDuration });
         }
 
-        public void DeleteCallHistyory()
+        public void DeleteCallHistory()
         {
             conversations.Clear();
         }
@@ -97,14 +77,14 @@ namespace Program
 
         public void PrintInfo()
         {
-            Console.WriteLine("Model: " + this.Model + "\nManufacturer: " + this.Manufacturer + "\nPrice: " +
-                this.Price + "$" + "\nOwner: " + this.Owner);
+            Console.WriteLine("Model: " + this.model + "\nManufacturer: " + this.manufacturer + "\nPrice: " +
+                this.price + "$" + "\nOwner: " + this.owner + "\n");
         }
 
         public override string ToString()
         {
-            return "Model: " + this.Model + "\nManufacturer: " + this.Manufacturer + "\nPrice: " +
-                this.Price + "$" + "\nOwner: " + this.Owner;
+            return "Model: " + this.model + "\nManufacturer: " + this.manufacturer + "\nPrice: " +
+                this.price + "$" + "\nOwner: " + this.owner + "\n";
         }
     }
 
@@ -113,42 +93,32 @@ namespace Program
         private string model = null;
         private double idleTime = 0;
         private double talkHours = 0;
-        public enum BatteryType { LiIon, NiMH, NiCd, LiPol }
-        private BatteryType battery;
+        public enum BatteryTypes { None, LiIon, NiMH, NiCd, LiPol }
+        private BatteryTypes batteryType;
 
         public string Model { get => model; set => model = value; }
         public double IdleTime { get => idleTime; set => idleTime = value; }
         public double TalkHours { get => talkHours; set => talkHours = value; }
+        public BatteryTypes BatteryType { get => batteryType; set => batteryType = value; }
 
         public Battery()
-        {
-
-        }
+            : this(null) { }
 
         public Battery(string model)
-            : this(model, 0)
-        {
-
-        }
+            : this(model, 0) { }
 
         public Battery(string model, double idleTime)
-            : this(model, idleTime, 0)
-        {
-
-        }
+            : this(model, idleTime, 0) { }
 
         public Battery(string model, double idleTime, double talkHours)
-            : this(model, idleTime, talkHours, BatteryType.LiIon)
-        {
+            : this(model, idleTime, talkHours, BatteryTypes.None) { }
 
-        }
-
-        public Battery(string model, double idleTime, double talkHours, BatteryType battery)
+        public Battery(string model, double idleTime, double talkHours, BatteryTypes battery)
         {
             this.Model = model;
             this.IdleTime = idleTime;
             this.TalkHours = talkHours;
-            this.battery = battery;
+            this.BatteryType = battery;
         }
     }
 
@@ -161,15 +131,10 @@ namespace Program
         public double Colors { get => colors; set => colors = value; }
 
         public Display()
-        {
-
-        }
+            : this(0) { }
 
         public Display(double size)
-            : this(size, 0)
-        {
-
-        }
+            : this(size, 0) { }
 
         public Display(double size, double colors)
         {
@@ -188,37 +153,13 @@ namespace Program
         public string CallBeginning { get => callBeginning; set => callBeginning = value; }
         public string CallDuration { get => callDuration; set => callDuration = value; }
 
-        public Call()
-        {
-
-        }
+        public Call() { }
 
         public Call(string callDate, string callBeginning, string callDuration)
         {
-            this.callDate = callDate;
-            this.callBeginning = callBeginning;
-            this.callDuration = callDuration;
-        }
-
-        public override string ToString()
-        {
-            return "callDate: " + CallDate + " callBeginning: " + callBeginning + " callDuration: " + callBeginning;
-        }
-    }
-
-    public class Trigger
-    {
-        public static void Main(string[] args)
-        {
-            GSM myGSM = new GSM();
-            Call firstCall = new Call("date", "start", "duration");
-            Call secondCall = new Call("date2", "start2", "duration2");
-            myGSM.AddCall(firstCall.CallDate, firstCall.CallBeginning, firstCall.CallDuration);
-            myGSM.AddCall(secondCall.CallDate, secondCall.CallBeginning, secondCall.CallDuration);
-            foreach (Call call in myGSM.CallHistory)
-            {
-                Console.WriteLine(call);
-            }
+            this.CallDate = callDate;
+            this.CallBeginning = callBeginning;
+            this.CallDuration = callDuration;
         }
     }
 }
