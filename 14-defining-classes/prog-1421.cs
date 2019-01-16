@@ -20,17 +20,16 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Program
 {
     public class Library
     {
         private string name = null;
-        private List<Book> bookShielf = new List<Book>();
+        private List<Book> bookshelf = new List<Book>();
 
         public string Name { get => name; }
-        public List<Book> BookShielf { get => bookShielf; set => bookShielf = value; }
+        public List<Book> Bookshelf { get => bookshelf; set => bookshelf = value; }
 
         public Library()
             : this(null) { }
@@ -42,19 +41,18 @@ namespace Program
 
         public void AddBook(string title, string author, string publisher, string realeseDate, string isbnNumber)
         {
-            bookShielf.Add(new Book() { Title = title, Author = author, Publisher = publisher, RealeseDate = realeseDate, IsbnNumber = isbnNumber });
+            bookshelf.Add(new Book() { Title = title, Author = author, Publisher = publisher, RealeseDate = realeseDate, IsbnNumber = isbnNumber });
         }
 
         public void DeleteBook(string author)
         {
-            
-                bookShielf.Remove(new Book() { Author = author});
+            bookshelf.Remove(new Book() { Author = author});
         }
 
         public void DisplayBookInfo(string title)
         {
-            if (bookShielf.Exists(x => x.Title.Contains(title)))
-                Console.WriteLine(bookShielf.Find(x => x.Title.Contains(title)));
+            if (bookshelf.Exists(x => x.Title.Contains(title)))
+                Console.WriteLine(bookshelf.Find(x => x.Title.Contains(title)));
             else
                 Console.WriteLine($"\nSorry, couldn't find the book {title} in our library.");
         }
@@ -62,9 +60,9 @@ namespace Program
         public void DisplayBooksBy(string author)
         {
             List<Book> authorsBooks;
-            if (BookShielf.Exists(x => x.Author == author))
+            if (Bookshelf.Exists(x => x.Author == author))
             {
-                authorsBooks = BookShielf.FindAll(x => x.Author.Contains(author));
+                authorsBooks = Bookshelf.FindAll(x => x.Author.Contains(author));
                 foreach (Book book in authorsBooks)
                     Console.WriteLine(book);
             }
@@ -109,16 +107,10 @@ namespace Program
 
     public class LibraryTest
     {
-        public static void DisplayLibraryBooks(Library library)
+        public static void DisplayBookshelf(Library library)
         {
-            foreach (Book book in library.BookShielf)
+            foreach (Book book in library.Bookshelf)
                 Console.WriteLine(book);
-        }
-
-        public static List<Book> DeleteBooksByStephenKing(Library library)
-        {
-            library.BookShielf.RemoveAll(x => x.Author == "Stephen King");
-            return library.BookShielf;
         }
 
         public static void Main(string[] args)
@@ -130,11 +122,12 @@ namespace Program
             chewbacca.AddBook("It", "Stephen King", "New English Library", "1/10/1987", "0450411435");
             chewbacca.AddBook("The Shinning", "Stephen King", "New English Library", "1/07/1980", "0450040186");
 
-            DisplayLibraryBooks(chewbacca);
+            DisplayBookshelf(chewbacca);
 
-            chewbacca.BookShielf = DeleteBooksByStephenKing(chewbacca);
+            chewbacca.DisplayBooksBy("Stephen King");
+            chewbacca.Bookshelf.RemoveAll(x => x.Author == "Stephen King");
 
-            DisplayLibraryBooks(chewbacca);
+            DisplayBookshelf(chewbacca);
         }
     }
 }

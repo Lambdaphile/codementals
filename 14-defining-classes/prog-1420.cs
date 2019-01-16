@@ -23,17 +23,16 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Program
 {
     public class Library
     {
         private string name = null;
-        private List<Book> books = new List<Book>();
+        private List<Book> bookshelf = new List<Book>();
 
         public string Name { get => name; }
-        public List<Book> Books { get => books; }
+        public List<Book> Bookshelf { get => bookshelf; set => bookshelf = value; }
 
         public Library()
             : this(null) { }
@@ -45,28 +44,35 @@ namespace Program
 
         public void AddBook(string title, string author, string publisher, string realeseDate, string isbnNumber)
         {
-            books.Add(new Book() { Title = title, Author = author, Publisher = publisher, RealeseDate = realeseDate, IsbnNumber = isbnNumber });
+            bookshelf.Add(new Book() { Title = title, Author = author, Publisher = publisher, RealeseDate = realeseDate, IsbnNumber = isbnNumber });
         }
 
-        public void SearchBook(string author)
+        public void DeleteBook(string author)
         {
-            if (books.Exists(x => x.Author == author))
-                Console.WriteLine(books.Find(x => x.Author.Contains(author)));
+            bookshelf.Remove(new Book() { Author = author});
+        }
+
+        public void DisplayBookInfo(string title)
+        {
+            if (bookshelf.Exists(x => x.Title.Contains(title)))
+                Console.WriteLine(bookshelf.Find(x => x.Title.Contains(title)));
             else
-                Console.WriteLine($"\nNo books from the given author: \"{author}\"");
+                Console.WriteLine($"\nSorry, couldn't find the book {title} in our library.");
         }
 
-        public void DisplayInfo(string title)
+        public void DisplayBooksBy(string author)
         {
-            if (books.Exists(x => x.Title == title))
-                Console.WriteLine(books.Find(x => x.Title.Contains(title)));
+            List<Book> authorsBooks;
+            if (Bookshelf.Exists(x => x.Author == author))
+            {
+                authorsBooks = Bookshelf.FindAll(x => x.Author.Contains(author));
+                foreach (Book book in authorsBooks)
+                    Console.WriteLine(book);
+            }
             else
-                Console.WriteLine($"\nNo books with title: {title}");
-        }
-
-        public void DeleteBook(string title)
-        {
-            books.Remove(new Book() { Title = title });
+            {
+                Console.WriteLine($"Sorry, couldn't find books from {author}.");
+            }
         }
     }
 
@@ -98,7 +104,7 @@ namespace Program
         public bool Equals(Book other)
         {
             if (other == null) return false;
-            return (this.Title.Equals(other.Title));
+            return (this.Author.Equals(other.Author));
         }
     }
 }
