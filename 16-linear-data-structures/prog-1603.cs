@@ -5,13 +5,15 @@
 |
 | Exercise 2:
 |
-|     Write a program, which reads from the console
-|     N integers and prints them in reversed order.
-|     Use the Stack<int> class.
+|     Write a program that reads from the console
+|     a sequence of positive integer numbers.
+|     The sequence ends when an empty line is entered.
+|     Print the sequence sorted in ascending order.
 |
 | Solutions and Guidelines:
 |
-|     Use Stack<int>.
+|     Keep the numbers in List<T>
+|     and finally use its Sort() method.
 |
 */
 
@@ -25,7 +27,7 @@ namespace Program
         public static void Main(string[] args)
         {
             string input = null;
-            Stack<int> sequence = new Stack<int>();
+            List<int> sequence = new List<int>();
 
             Console.WriteLine("Please, enter positive integers only or enter empty line to exit).\n");
             do
@@ -34,9 +36,11 @@ namespace Program
                 input = Console.ReadLine();
                 if (input.Equals(" ")) break;
                 bool success = int.TryParse(input, out int num);
-                if (success) sequence.Push(num);
+                if (success) sequence.Add(num);
                 else Console.WriteLine("\nInvalid input! Please, try again.\n");
             } while (true);
+
+            sequence.Sort();
 
             Console.Write("\n: ");
             foreach (var num in sequence)
