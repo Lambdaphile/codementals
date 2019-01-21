@@ -3,7 +3,7 @@
 | Chapter 16. Linear Data Structures
 |--------------------------------------------------------------------------
 |
-| Exercise 2:
+| Exercise 3:
 |
 |     Write a program that reads from the console
 |     a sequence of positive integer numbers.
