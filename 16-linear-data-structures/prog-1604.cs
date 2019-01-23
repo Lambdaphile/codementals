@@ -63,12 +63,12 @@ namespace Program
                     start = i + 1;
                     length = 1;
                 }
+            }
 
-                if (i == sequence.Count - 2 && length > maxLength)
-                {
-                    maxLength = length;
-                    maxStart = start;
-                }
+            if (length > maxLength)
+            {
+                maxLength = length;
+                maxStart = start;
             }
 
             List<int> longestSubSequence = sequence.GetRange(maxStart, maxLength);
