@@ -25,7 +25,6 @@
 */
 
 using System;
-using System.Collections.Generic;
 
 namespace Program
 {
@@ -45,7 +44,6 @@ namespace Program
                 if (occurrences[i] != 0)
                     Console.WriteLine($"{i} -> {occurrences[i]} times.");
             }
-
         }
     }
 }
