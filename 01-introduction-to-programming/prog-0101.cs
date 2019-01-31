@@ -5,13 +5,13 @@
 |
 | Exercise 1:
 |
-|     Compile and execute the sample program from this chapter using
-|     the command prompt (the console) and Visual Studio.
+|     Compile and execute the sample program from this chapter
+|     using the command prompt (the console) and Visual Studio.
 |
 | Solutions and Guidelines:
 |
-|     Follow the instruction from the Compiling and Executing C#
-|     Programs section.
+|     Follow the instruction from the Compiling and Executing
+|     C# Programs section.
 |
 */
 

@@ -15,7 +15,6 @@
 */
 
 using System;
-using System.Text;
 
 namespace Program
 {
@@ -23,8 +22,7 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Console.OutputEncoding = Encoding.UTF8;
-            Console.WriteLine("Хан Соло");
+            Console.WriteLine("Han Solo");
         }
     }
 }

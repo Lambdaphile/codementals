@@ -10,8 +10,8 @@
 |
 | Solutions and Guidelines:
 |
-|     Try to learn on your own how to use loops in C#. You may read
-|     about for - loops in the chapter “Loops”.
+|     Try to learn on your own how to use loops in C#.
+|     You may read about for - loops in the chapter “Loops”.
 |
 */
 
@@ -23,12 +23,9 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("First 100 members of the sequence 2, -3, 4, -5, 6, -7, 8:");
-
+            Console.WriteLine("First 100 members of the sequence (2, -3, 4, -5, 6, -7, 8): ");
             for (int i = 2; i <= 100; i++)
-            {
                 Console.WriteLine(i % 2 == 0 ? i : -i);
-            }
         }
     }
 }

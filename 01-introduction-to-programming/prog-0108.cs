@@ -23,12 +23,9 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter your age: ");
+            Console.Write("Please, enter your age: ");
             int age = Int32.Parse(Console.ReadLine());
-
-            age += 10;
-
-            Console.WriteLine("Your age after 10 years: {0}", age);
+            Console.WriteLine("Your age after 10 years: {0}", age + 10);
         }
     }
 }
