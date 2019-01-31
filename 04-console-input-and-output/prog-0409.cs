@@ -5,14 +5,16 @@
 |
 | Exercise 9:
 |
-|     Write a program that reads an integer number n from the console.
-|     After that reads n numbers from the console and prints their sum.
+|     Write a program that reads an integer number n
+|     from the console. After that reads n numbers from
+|     the console and prints their sum.
 |
 | Solutions and Guidelines:
 |
 |     You should use a for-loop (see the chapter "Loops").
-|     Read the numbers one after another and accumulate their sum
-|     in a variable, which then display on the console at the end.
+|     Read the numbers one after another and accumulate
+|     their sum in a variable, which then display on the
+|     console at the end.
 |
 */
 
@@ -26,7 +28,6 @@ namespace Program
         {
             Console.Write("How many numbers would you like to enter: ");
             int n = Convert.ToInt32(Console.ReadLine());
-
             long sum = 0;
             Console.WriteLine("\nEnter {0} numbers:\n", n);
             for (int i = 0; i < n; i++)
@@ -35,7 +36,6 @@ namespace Program
                 int number = Convert.ToInt32(Console.ReadLine());
                 sum += number;
             }
-
             Console.WriteLine("\nSum of the entered numbers is: {0}.", sum);
         }
     }

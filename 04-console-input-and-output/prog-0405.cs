@@ -6,11 +6,11 @@
 | Exercise 5:
 |
 |     Write a program that reads from the console two integer
-|     numbers (int) and prints how many numbers between them exist,
-|     such that the remainder of their division by 5 is 0.
+|     numbers (int) and prints how many numbers between them
+|     exist, such that the remainder of their division by 5 is 0.
 |
-|       * Example: in the range (14, 25) there are 3 such numbers:
-|         15, 20 and 25.
+|       * Example: in the range (14, 25) there are 3 such
+|         numbers: 15, 20 and 25.
 |
 | Solutions and Guidelines:
 |
@@ -39,20 +39,14 @@ namespace Program
             Console.WriteLine("Enter two numbers (a < b):");
             Console.Write("a = ");
             int a = int.Parse(Console.ReadLine());
-
             Console.Write("\nb = ");
             int b = int.Parse(Console.ReadLine());
 
             int counter = 0;
-
             for (int i = a; i < b; i++)
             {
-                if (i % 5 == 0)
-                {
-                    counter++;
-                }
+                if (i % 5 == 0) counter++;
             }
-
             Console.WriteLine("There are {0} number between {1} and {2} that n % 5 != 1.", counter, a, b);
         }
     }

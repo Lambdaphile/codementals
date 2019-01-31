@@ -5,15 +5,16 @@
 |
 | Exercise 8:
 |
-|     Write a program that reads five numbers from the console
-|     and prints the greatest of them.
+|     Write a program that reads five numbers from the
+|     console and prints the greatest of them.
 |
 | Solutions and Guidelines:
 |
-|     You can use the comparison statement "if" (you can read about
-|     it on the Internet or from the chapter "Conditional Statements").
-|     To avoid repeating code you can use the looping construct "for"
-|     (you could read about it online or in the chapter "Loops").
+|     You can use the comparison statement "if" (you can
+|     read about it on the Internet or from the chapter
+|     "Conditional Statements"). To avoid repeating code
+|     you can use the looping construct "for" (you could
+|     read about it online or in the chapter "Loops").
 |
 */
 
@@ -33,7 +34,6 @@ namespace Program
                 int number = Convert.ToInt32(Console.ReadLine());
                 greatest = (number > greatest) ? number : greatest;
             }
-
             Console.WriteLine("Greatest of the entered numbers: {0}", greatest);
         }
     }

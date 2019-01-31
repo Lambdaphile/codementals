@@ -5,8 +5,9 @@
 |
 | Exercise 10:
 |
-|     Write a program that reads an integer number n from the console
-|     and prints all numbers in the range [1…n], each on a separate line.
+|     Write a program that reads an integer number n from
+|     the console and prints all numbers in the range
+|     [1...n], each on a separate line.
 |
 | Solutions and Guidelines:
 |
@@ -27,12 +28,8 @@ namespace Program
             Console.WriteLine("Enter an integer:\n");
             Console.Write("n = ");
             int n = Int32.Parse(Console.ReadLine());
-
             Console.WriteLine("\nNumbers in range [1...n]:\n");
-            for (int i = 1; i <= n; i++)
-            {
-                Console.WriteLine(i);
-            }
+            for (int i = 1; i <= n; i++) Console.WriteLine(i);
         }
     }
 }

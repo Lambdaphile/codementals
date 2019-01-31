@@ -26,11 +26,8 @@ namespace Program
             Console.Write("\nr = ");
             int r = Int32.Parse(Console.ReadLine());
 
-            // Finding the perimeter
             double P = 2 * Math.PI * r;
             Console.WriteLine("\nPerimeter of the circle: {0}", P);
-
-            // Finding the area
             double A = Math.PI * Math.Pow(r, 2);
             Console.WriteLine("Area of the circle: {0}", A);
         }

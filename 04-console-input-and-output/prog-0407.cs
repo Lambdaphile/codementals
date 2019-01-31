@@ -5,23 +5,24 @@
 |
 | Exercise 7:
 |
-|     Write a program that reads five integer numbers and prints
-|     their sum. If an invalid number is entered the program
-|     should prompt the user to enter another number.
+|     Write a program that reads five integer numbers and
+|     prints their sum. If an invalid number is entered the
+|     program should prompt the user to enter another number.
 |
 | Solutions and Guidelines:
 |
 |     You can read the numbers in five different variables
-|     and finally sum them and print the obtained sum.
-|     Note that the sum of 5 int values may not fit
-|     in the int type so you should use long.
+|     and finally sum them and print the obtained sum.Note
+|     that the sum of 5 int values may not fit in the int
+|     type so you should use long.
 |
-|     Another approach is using loops. When parsing the consecutive
-|     numbers use conditional parsing with TryParse(…).
-|     When an invalid number is entered, repeat reading
-|     of the number. You can do this through while loop with
-|     an appropriate exit condition. To avoid repetitive code
-|     you can explore the for-loops from the chapter "Loops".
+|     Another approach is using loops. When parsing the
+|     consecutive numbers use conditional parsing with
+|     TryParse(...). When an invalid number is entered,
+|     repeat reading of the number. You can do this through
+|     while loop with an appropriate exit condition.
+|     To avoid repetitive code you can explore the for-loops
+|     from the chapter "Loops".
 |
 */
 

@@ -5,8 +5,8 @@
 |
 | Exercise 1:
 |
-|     Write a program that reads from the console three numbers
-|     of type int and prints their sum.
+|     Write a program that reads from the console three
+|     numbers of type int and prints their sum.
 |
 | Solutions and Guidelines:
 |
@@ -31,7 +31,6 @@ namespace Program
             int num3 = Int32.Parse(Console.ReadLine());
 
             int sum = num1 + num2 + num3;
-
             Console.WriteLine("Sum of the numbers {0}, {1}, {2}: {3}", num1, num2, num3, sum);
         }
     }

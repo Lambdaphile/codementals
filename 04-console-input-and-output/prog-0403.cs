@@ -5,16 +5,16 @@
 |
 | Exercise 3:
 |
-|     A given company has name, address, phone number, fax number,
-|     web site and manager. The manager has name, surname
-|     and phone number.
+|     A given company has name, address, phone number,
+|     fax number, web site and manager. The manager has
+|     name, surname and phone number.
 |
 |     Write a program that reads information about the company
 |     and its manager and then prints it on the console.
 |
 | Solutions and Guidelines:
 |
-|     Format the text with Write(…) or WriteLine(…) similar
+|     Format the text with Write(...) or WriteLine(...) similar
 |     to the example with the letter that we looked at.
 |
 */
@@ -48,7 +48,6 @@ namespace Program
             string managerSurname = Console.ReadLine();
             Console.Write("Phone number:");
             string managerPhoneNumber = Console.ReadLine();
-
 
             Console.WriteLine("\nCompany info:" +
                 "\nName: {0}" +
