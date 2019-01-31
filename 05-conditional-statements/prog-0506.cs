@@ -12,22 +12,28 @@
 |
 | Solutions and Guidelines:
 |
-|     From math it is known, that a quadratic equation may have one
-|     or two real roots or no real roots at all.
+|     From math it is known, that a quadratic equation may
+|     have one or two real roots or no real roots at all.
 |     In order to calculate the real roots of a given quadratic
-|     equation, we first calculate the discriminant (D)
-|     by the formula: D = pow(b, 2) - 4*a*c.
+|     equation, we first calculate the discriminant (D) by
+|     the formula:
+|
+|        * D = pow(b, 2) - 4 * a * c.
 |
 |     If the discriminant is zero, then the quadratic
 |     equation has one double real root and it is calculated
-|     by the formula: x1, 2 = -b / 2 * a.
+|     by the formula:
 |
-|     If the value of the discriminant is positive, then the equation
-|     has two distinct real roots, which are calculated
-|     by the formula: x1,2 = -b (+,-) sqrt(pow(b, 2) - 4*a*c / 2 * a.
+|       * x1, 2 = - b / 2 * a.
 |
-|     If the discriminant is negative, the quadratic
-|     equation has no real roots.
+|     If the value of the discriminant is positive, then
+|     the equation has two distinct real roots, which are
+|     calculated by the formula:
+|
+|       * x1,2 = - b (+,-) sqrt(pow(b, 2) - 4 * a * c / 2 * a.
+|
+|     If the discriminant is negative, the quadratic equation
+|     has no real roots.
 |
 */
 
@@ -48,7 +54,6 @@ namespace Program
             double c = double.Parse(Console.ReadLine());
 
             double D = Math.Pow(b, 2) + 4 * a * c;
-
             if (D == 0)
             {
                 double x = -b / 2 * a;

@@ -5,8 +5,8 @@
 |
 | Exercise 10:
 |
-|     Write a program that applies bonus points to given scores
-|     in the range [1…9] by the following rules:
+|     Write a program that applies bonus points to given
+|     scores in the range [1...9] by the following rules:
 |
 |       - If the score is between 1 and 3, the program
 |         multiplies it by 10.
@@ -35,7 +35,6 @@ namespace Program
             Console.WriteLine("Please, enter the score in the range [0-9]:\n");
             Console.Write("Score: ");
             int score = Int32.Parse(Console.ReadLine());
-
             if (score >= 1 && score <= 3)
             {
                 score *= 10;

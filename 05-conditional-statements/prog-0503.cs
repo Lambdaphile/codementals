@@ -10,8 +10,8 @@
 |
 | Solutions and Guidelines:
 |
-|     Use nested if-statements, first checking the first two numbers
-|     then checking the bigger of them with the third.
+|     Use nested if-statements, first checking the first two
+|     numbers then checking the bigger of them with the third.
 |
 */
 
@@ -34,20 +34,14 @@ namespace Program
             if (a > b)
             {
                 if (a > c)
-                {
                     Console.WriteLine("First number is biggest.");
-                }
             }
             else
             {
                 if (b > c)
-                {
                     Console.WriteLine("Second number is the biggest.");
-                }
                 else
-                {
                     Console.WriteLine("Third number is the biggest");
-                }
             }
         }
     }

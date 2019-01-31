@@ -5,8 +5,8 @@
 |
 | Exercise 9:
 |
-|     We are given 5 integer numbers. Write a program that finds those
-|     subsets whose sum is 0.
+|     We are given 5 integer numbers. Write a program that
+|     finds those subsets whose sum is 0.
 |
 |       * Examples:
 |
@@ -19,10 +19,10 @@
 | Solutions and Guidelines:
 |
 |     Use nested if statements or series of 31 comparisons,
-|     in order to check all the sums of the 31 subsets
-|     of the given numbers (without the empty one).
-|     Note that the problem in general (with N numbers)
-|     is complex and using loops will not be enough to solve it.
+|     in order to check all the sums of the 31 subsets of
+|     the given numbers (without the empty one). Note that
+|     the problem in general (with N numbers) is complex
+|     and using loops will not be enough to solve it.
 |
 */
 
@@ -45,7 +45,6 @@ namespace Program
 
             int subsetSum;
             bool hasSubsetSumEqualZero = false;
-
             for (int i = 0; i < set.Length; i++)
             {
                 subsetSum = set[i];
@@ -67,7 +66,6 @@ namespace Program
                     }
                 }
             }
-
             if (hasSubsetSumEqualZero != true)
             {
                 Console.WriteLine("There are no subsets whose sum equals 0.");

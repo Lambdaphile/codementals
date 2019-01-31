@@ -5,13 +5,14 @@
 |
 | Exercise 5:
 |
-|     Write a program that asks for a digit (0-9), and depending
-|     on the input, shows the digit as a word (in English).
-|     Use a switch statement.
+|     Write a program that asks for a digit (0-9), and
+|     depending on the input, shows the digit as a word
+|     (in English). Use a switch statement.
 |
 | Solutions and Guidelines:
 |
-|     Just use a switch statement to check for all possible digits.
+|     Just use a switch statement to check for all possible
+|     digits.
 |
 */
 
@@ -26,7 +27,7 @@ namespace Program
             Console.Write("Please, enter a digit from 0-9: ");
             int digit = Int32.Parse(Console.ReadLine());
 
-            Console.Write("\nNumber you entered in words: ");
+            Console.Write("\nDigit you entered is: ");
             switch (digit)
             {
                 case 0:
@@ -62,9 +63,7 @@ namespace Program
 
                 default:
                     if (digit < 0 && digit > 9)
-                    {
                         Console.WriteLine("Please, enter a number within range of 0 - 9.");
-                    }
                     break;
             }
             Console.WriteLine();
