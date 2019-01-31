@@ -11,9 +11,9 @@
 | Solutions and Guidelines:
 |
 |     Divide the number by 100 and save it in a new variable,
-|     which then divide by 10 and take the remainder. The remainder
-|     of the division by 10 is the third digit of the original number.
-|     Check if it is equal to 7.
+|     which then divide by 10 and take the remainder.
+|     The remainder of the division by 10 is the third digit of
+|     the original number. Check if it is equal to 7.
 |
 */
 
@@ -26,7 +26,6 @@ namespace Program
         static void Main(string[] args)
         {
             int a = 3700, b = a / 100, x = b % 10;
-
             Console.WriteLine(x == 7 ? "Third digit is 7." : "Third digit is not 7.");
         }
     }

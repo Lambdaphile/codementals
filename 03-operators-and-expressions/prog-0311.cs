@@ -5,11 +5,12 @@
 |
 | Exercise 11:
 |
-|     We are given a number n and a position p. Write a sequence
-|     of operations that prints the value of the bit on the position
-|     p in the number (0 or 1). Example: n=35, p=5 -> 1.
+|     We are given a number n and a position p. Write a
+|     sequence of operations that prints the value of the
+|     bit on the position p in the number (0 or 1).
 |
-|       * Another example: n=35, p=6 -> 0.
+|       * Example: n = 35, p = 5 -> 1.
+|       * Another example: n = 35, p = 6 -> 0.
 |
 | Solutions and Guidelines:
 |
@@ -36,7 +37,6 @@ namespace Program
             Console.WriteLine("Enter a number: ");
             Console.Write("\nNumber = ");
             int n = Convert.ToInt32(Console.ReadLine());
-
             Console.WriteLine("\nEnter the position:");
             Console.Write("\nPosition = ");
             int p = Convert.ToInt32(Console.ReadLine());

@@ -11,8 +11,8 @@
 |
 | Solutions and Guidelines:
 |
-|     Search the Internet for how to read integers from the console
-|     and use the formula for rectangle area calculation.
+|     Search the Internet for how to read integers from the
+|     console and use the formula for rectangle area calculation.
 |     If you have difficulties see instructions on the next problem.
 |
 */
@@ -33,7 +33,6 @@ namespace Program
 
             int A = rectangleWidth * rectangleLength;
             int P = 2 * (rectangleLength + rectangleWidth);
-
             Console.WriteLine("\nArea = {0}", A);
             Console.WriteLine("Perimeter = {0}", P);
         }
