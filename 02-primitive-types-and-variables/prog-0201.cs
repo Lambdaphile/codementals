@@ -5,12 +5,16 @@
 |
 | Exercise 1:
 |
-|     Declare several variables by selecting for each one of them
-|     the most appropriate of the types: sbyte, byte, short,
-|     ushort, int, uint, long and ulong in order to assign them
-|     the following values: 52,130; -115; 4825932; 97;
-|     -10000; 20000; 224; 970,700,000; 112; -44;
-|     -1,000,000; 1990; 123456789123456789.
+|     Declare several variables by selecting for each
+|     one of them the most appropriate of the types:
+|
+|       * sbyte, byte, short, ushort, int, uint, long and ulong
+|
+|     in order to assign them the following values:
+|
+|       * 52,130; -115; 4825932; 97; -10000; 20000; 224;
+|         970,700,000; 112; -44; -1,000,000; 1990;
+|         123456789123456789.
 |
 | Solutions and Guidelines:
 |
@@ -27,20 +31,14 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            sbyte num1 = 52;
-            byte num2 = 130;
-            sbyte num3 = -115;
-            int num4 = 4825932;
-            sbyte num5 = 97;
-            short num6 = -10000;
-            short num7 = 20000;
-            byte num8 = 224;
-            int num9 = 970700000;
-            sbyte num10 = 112;
-            sbyte num11 = -44;
-            int num12 = -1000000;
-            short num13 = 1990;
-            long num14 = 123456789123456789;
+            sbyte sbyteNum1 = -115, sbyteNum2 = -44;
+            byte byteNum1 = 97, byteNum2 = 224, byteNum3 = 112;
+            short shortNum1 = -10000, shortNum2 = 20000, shortNum = 1990;
+            ushort ushortNum1 = 52130, ushortNum2 = 52;
+            int intNum1 = 4825932, intNum2 = 970700000, intNum3 = -1000000;
+            uint uintNum1;
+            long longNum = 123456789123456789;
+            ulong ulongNum1;
         }
     }
 }

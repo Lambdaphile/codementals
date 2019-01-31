@@ -5,8 +5,9 @@
 |
 | Exercise 13:
 |
-|     Declare two variables of type int. Assign to them values 5 and 10
-|     respectively. Exchange (swap) their values and print them.
+|     Declare two variables of type int. Assign to them values
+|     5 and 10 respectively. Exchange (swap) their values
+|     and print them.
 |
 | Solutions and Guidelines:
 |
@@ -19,9 +20,9 @@
 |         a = b;
 |         b = oldA;
 |
-|     To swap integer variables other solutions exist which do not
-|     use a third variable. For example, if we have two
-|     integer variables a and b:
+|     To swap integer variables other solutions exist which
+|     do not use a third variable. For example,  if we have
+|     two integer variables a and b:
 |
 |       * int a = 5;
 |         int b = 10;
@@ -30,8 +31,8 @@
 |         b = a - b;
 |         a = a - b;
 |
-|     You might also use the XOR swap algorithm for exchanging integer
-|     values: http://en.wikipedia.org/wiki/XOR_swap_algorithm.
+|     You might also use the XOR swap algorithm for exchanging
+|     integer values: http://en.wikipedia.org/wiki/XOR_swap_algorithm.
 |
 */
 
@@ -44,7 +45,6 @@ namespace Program
         static void Main(string[] args)
         {
             int a = 5, b = 10, temp;
-
             temp = a;
             a = b;
             b = temp;

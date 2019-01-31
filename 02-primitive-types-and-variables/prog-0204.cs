@@ -5,14 +5,15 @@
 |
 | Exercise 4:
 |
-|     Initialize a variable of type int with a value of 256 in
-|     hexadecimal format (256 is 100 in a numeral system with base 16).
+|     Initialize a variable of type int with a value of 256
+|     in hexadecimal format (256 is 100 in a numeral system
+|     with base 16).
 |
 | Solutions and Guidelines:
 |
-|     Look at the section about Integer Literals. To easily
-|     convert numbers to a different numeral system use
-|     the built-in Windows calculator. For a hexadecimal
+|     Look at the section about Integer Literals.
+|     To easily convert numbers to a different numeral system
+|     use the built-in Windows calculator. For a hexadecimal
 |     representation of the literal use prefix 0x.
 |
 */

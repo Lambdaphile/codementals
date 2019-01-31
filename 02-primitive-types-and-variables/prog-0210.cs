@@ -5,8 +5,8 @@
 |
 | Exercise 10:
 |
-|     Write a program to print a figure in the shape of a heart
-|     by the sign "o".
+|     Write a program to print a figure in the shape of a
+|     heart by the sign "o".
 |
 | Solutions and Guidelines:
 |
