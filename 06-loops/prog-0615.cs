@@ -5,8 +5,8 @@
 |
 | Exercise 15:
 |
-|     Write a program that converts a given number from hexadecimal
-|     to decimal notation.
+|     Write a program that converts a given number from
+|     hexadecimal to decimal notation.
 |
 | Solutions and Guidelines:
 |
@@ -24,13 +24,11 @@ namespace Program
         {
             Console.Write("Please, enter a number in hexadecimal notation: ");
             string hexNum = Console.ReadLine();
-
             char[] hexNumArr = hexNum.ToCharArray();
             Array.Reverse(hexNumArr);
 
             double decimalNum = 0;
             double pow = 0;
-
             foreach (var num in hexNumArr)
             {
                 switch (num)
@@ -60,7 +58,6 @@ namespace Program
 
                 pow++;
             }
-
             Console.WriteLine("\nDecimal representation of entered hex number {0}: {1}",
                 hexNum, decimalNum);
         }

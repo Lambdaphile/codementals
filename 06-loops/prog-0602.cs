@@ -5,15 +5,17 @@
 |
 | Exercise 2:
 |
-|     Write a program that prints on the console the numbers from
-|     1 to N, which are not divisible by 3 and 7 simultaneously.
-|     The number N should be read from the standard input.
+|     Write a program that prints on the console the numbers
+|     from 1 to N, which are not divisible by 3 and 7
+|     simultaneously. The number N should be read from the
+|     standard input.
 |
 | Solutions and Guidelines:
 |
-|     Use a for-loop and the operator % for finding the remainder
-|     in integer division. A number num is not divisible by 3 and 7
-|     simultaneously exactly when (num % (3*7) == 0).
+|     Use a for-loop and the operator % for finding the
+|     remainder in integer division. A number num is not
+|     divisible by 3 and 7 simultaneously exactly when
+|     (num % (3 * 7) == 0).
 |
 */
 

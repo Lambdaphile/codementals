@@ -19,9 +19,9 @@
 | Solutions and Guidelines:
 |
 |     You should use two nested loops, similar to the problem
-|     "Printing a Triangle". The outer loop must run from 1 to N,
-|     and the inner – from the value of the outer loop to the value
-|     of the outer loop + N - 1.
+|     "Printing a Triangle". The outer loop must run from 1
+|     to N, and the inner – from the value of the outer loop
+|     to the value of the outer loop + N - 1.
 |
 */
 
@@ -41,9 +41,7 @@ namespace Program
             for (int outerLoop = 1; outerLoop <= N; outerLoop++)
             {
                 for (int innerLoop = outerLoop; innerLoop <= outerLoop + N - 1; innerLoop++)
-                {
                     Console.Write("{0} ", innerLoop);
-                }
                 Console.WriteLine();
             }
         }

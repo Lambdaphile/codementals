@@ -5,8 +5,8 @@
 |
 | Exercise 16:
 |
-|     Write a program that by a given integer N prints the numbers
-|     from 1 to N in random order.
+|     Write a program that by a given integer N prints the
+|     numbers from 1 to N in random order.
 |
 | Solutions and Guidelines:
 |
@@ -31,15 +31,10 @@ namespace Program
             int n = int.Parse(Console.ReadLine());
 
             int[] rndArr = new int[n];
-
-            for (int i = 0; i < n; i++)
-            {
-                rndArr[i] = i + 1;
-            }
+            for (int i = 0; i < n; i++) rndArr[i] = i + 1;
 
             Random rnd = new Random();
             int rndIndex;
-
             for (int i = 0; i < rndArr.Length; i++)
             {
                 int container = rndArr[i];
@@ -47,7 +42,6 @@ namespace Program
                 rndArr[i] = rndArr[rndIndex];
                 rndArr[rndIndex] = container;
             }
-
             Console.Write("\nAfter randomizing the sequence indexes: ");
             foreach (var num in rndArr)
             {

@@ -23,11 +23,8 @@ namespace Program
         static void Main(string[] args)
         {
             Console.Write("Please, enter a binary number: ");
-
             string binaryNumber = Console.ReadLine();
-
             char[] binaryNumberDigits = binaryNumber.ToCharArray();
-
             Array.Reverse(binaryNumberDigits);
 
             double decimalNumber = 0;
@@ -35,17 +32,10 @@ namespace Program
             {
                 if (binaryNumberDigits[i] == '1')
                 {
-                    if (i == 0)
-                    {
-                        decimalNumber += 1;
-                    }
-                    else
-                    {
-                        decimalNumber += Math.Pow(2, i);
-                    }
+                    if (i == 0)  decimalNumber += 1;
+                    else decimalNumber += Math.Pow(2, i);
                 }
             }
-
             Console.WriteLine("\nDecimal equivalent of the entered binary number {0} is: {1}",
                 binaryNumber, decimalNumber);
         }

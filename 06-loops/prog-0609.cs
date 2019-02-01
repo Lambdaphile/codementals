@@ -15,11 +15,11 @@
 |     You can solve the problem with a for-loop for k=0...n,
 |     by using three additional variables factorial, power
 |     and sum in which you will keep for the k th iteration
-|     of the loop respectively k!, x k and the sum of the first
-|     k members of sequence.
+|     of the loop respectively k!, x k and the sum of the
+|     first k members of sequence.
 |
-|     If your implementation is good, you should have only one loop
-|     and you should not use external functions to calculate
+|     If your implementation is good, you should have only one
+|     loop and you should not use external functions to calculate
 |     factorials and to raise power.
 |
 */
@@ -39,7 +39,6 @@ namespace Program
             int x = int.Parse(Console.ReadLine());
 
             int factorial = 1, power = 1, sum = 0;
-
             for (int i = 1; i <= n; i++)
             {
                 factorial *= i;

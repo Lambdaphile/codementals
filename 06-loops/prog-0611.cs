@@ -13,15 +13,15 @@
 |
 | Solutions and Guidelines:
 |
-|     The number of zeros at the end of n! depends on how many times
-|     the number 10 is a divisor of the factorial. Because the product
-|     1 * 2 * ... * n has a greater number of divisors 2, than 5
-|     and because 10 = 2 * 5, then the number of zeros in n!
-|     is exactly as many as the multipliers with value 5 in the product
-|     1 * 2 * 3 *... * n.
-|     Because every fifth number is divisible by 5, and every 25th
-|     number is divisible by 5 two times, etc.,
-|     the number of zeros in n! is the sum: n/5 + n/25 + n/125 +...
+|     The number of zeros at the end of n! depends on how
+|     many times the number 10 is a divisor of the factorial.
+|     Because the product 1 * 2 * ... * n has a greater number
+|     of divisors 2, than 5 and because 10 = 2 * 5, then the
+|     number of zeros in n! is exactly as many as the
+|     multipliers with value 5 in the product 1 * 2 * 3 *... * n.
+|     Because every fifth number is divisible by 5, and every
+|     25th number is divisible by 5 two times, etc., the number
+|     of zeros in n! is the sum: n / 5 + n / 25 + n / 125 + ...
 |
 */
 
@@ -42,7 +42,6 @@ namespace Program
             {
                 factorial *= i;
             }
-
             Console.WriteLine("\nn! = {0}", factorial);
 
             int counter = 0;
@@ -51,7 +50,6 @@ namespace Program
                 factorial /= 10;
                 counter++;
             }
-
             Console.WriteLine("\nThe factorial ends with {0} zero/s at end.", counter);
         }
     }

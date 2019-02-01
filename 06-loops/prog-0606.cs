@@ -5,13 +5,14 @@
 |
 | Exercise 6:
 |
-|     Write a program that calculates N!/K! for given N and K (1<K<N)
+|     Write a program that calculates N! / K! for given N
+|     and K (1 < K < N)
 |
 | Solutions and Guidelines:
 |
-|     Multiply the numbers from K+1 to N (think why this is correct).
-|     You may check the properties of the factorial function
-|     in Wikipedia: http://en.wikipedia.org/wiki/Factorial.
+|     Multiply the numbers from K + 1 to N (think why this is
+|     correct). You may check the properties of the factorial
+|     function in Wikipedia: http://en.wikipedia.org/wiki/Factorial.
 |
 */
 
