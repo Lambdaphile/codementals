@@ -5,8 +5,8 @@
 |
 | Exercise 5:
 |
-|     Write a program, which finds the maximal sequence of consecutively
-|     placed increasing integers.
+|     Write a program, which finds the maximal sequence of
+|     consecutively placed increasing integers.
 |
 |       * Example: {3, 2, 3, 4, 2, 2, 4} -> {2, 3, 4}.
 |
@@ -28,7 +28,6 @@ namespace Program
         {
             int[] arrayX = { 3, 2, 3, 4, 2, 2, 4 };
             int len = 1, bestLen = 1, lenElement = 0, bestLenElement = 0;
-
             for (int i = 0; i < arrayX.Length - 1; i++)
             {
                 // We make our program to track the sequences that are
@@ -51,7 +50,6 @@ namespace Program
                 }
             }
 
-            // Printing part...
             Console.Write("The maximal sequence of consecutive elements in the given sequence:\n\n{");
             for (int i = 0; i < arrayX.Length; i++)
             {
