@@ -5,18 +5,19 @@
 |
 | Exercise 7:
 |
-|     Write a program, which reads from the console two integer numbers
-|     N and K (K<N) and array of N integers. Find those K consecutive
-|     elements in the array, which have maximal sum.
+|     Write a program, which reads from the console two 
+|     integer numbers N and K (K<N) and array of N integers.
+|     Find those K consecutive elements in the array, which
+|     have maximal sum.
 |
 | Solutions and Guidelines:
 |
-|     You can find out which sequence of the sequences of K numbers
-|     has the biggest sum by checking the sums of all of those sequences.
-|     The first sequence starts at index 0 and finishes at index K-1
-|     and has sum S. Then the second one starts at index 1 and ends at
-|     index K and we can find its sum using S by subtracting the element
-|     at index 0 and adding the element at index K. In this way we can
+|     You can find out which sequence of the sequences of K
+|     numbers has the biggest sum by checking the sums of all
+|     of those sequences. The first sequence starts at index 0 
+|     and finishes at index K-1 and has sum S. Then the second
+|     one starts at index 1 and ends at index K and we can find
+|     its sum using S by subtracting the element at index 0 and adding the element at index K. In this way we can
 |     reach the end of the sequence.
 |
 |     By finding and printing the previous element (prev) many times
