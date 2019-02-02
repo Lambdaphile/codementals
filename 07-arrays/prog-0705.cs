@@ -69,7 +69,6 @@ namespace Program
                     Console.Write("{0}, ", bestLenSimulation);
                 else
                     Console.Write("{0}", bestLenSimulation);
-
                 bestLenSimulation++;
             }
             Console.Write("}\n");
